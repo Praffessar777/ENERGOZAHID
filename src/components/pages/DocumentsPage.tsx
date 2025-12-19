@@ -18,11 +18,13 @@ export function DocumentsPage() {
       id: 1,
       category: 'licenses',
       name: 'Ліцензія на постачання електричної енергії споживачам',
-      description: 'Ліцензія № 2024/1234/П від НКРЕКП на здійснення господарської діяльності',
+      description: 'Постанова НКРЕКП про видачу ліцензії №980 від 11.09.2018 року',
       size: '2.4 MB',
       date: '15.01.2024',
       type: 'Офіційний документ',
-      format: 'PDF'
+      format: 'PDF',
+      viewLink: '/pdf/Постанова про видачу ліцензії від 11.09.18.pdf',
+      downloadLink: '/pdf/Постанова про видачу ліцензії від 11.09.18.pdf'
     },
     {
       id: 3,
@@ -32,7 +34,9 @@ export function DocumentsPage() {
       size: '3.2 MB',
       date: '01.01.2025',
       type: 'Нормативний акт',
-      format: 'PDF'
+      format: 'PDF',
+      viewLink: '/pdf/Struktura_taryfu_na_poslugy_z_rozpodilu_ee.pdf',
+      downloadLink: '/pdf/Struktura_taryfu_na_poslugy_z_rozpodilu_ee.pdf'
     },
     {
       id: 4,
@@ -42,7 +46,9 @@ export function DocumentsPage() {
       size: '1.8 MB',
       date: '01.01.2025',
       type: 'Нормативний акт',
-      format: 'PDF'
+      format: 'PDF',
+      viewLink: '/pdf/Tarifi_na_poslugi_z_rozpodilu_elektrichnoi_energii_shho_dijut_z_01 (1).pdf',
+      downloadLink: '/pdf/Tarifi_na_poslugi_z_rozpodilu_elektrichnoi_energii_shho_dijut_z_01 (1).pdf'
     },
     {
       id: 34,
@@ -52,7 +58,9 @@ export function DocumentsPage() {
       size: '1.5 MB',
       date: '01.01.2025',
       type: 'Інформаційний матеріал',
-      format: 'PDF'
+      format: 'PDF',
+      viewLink: '/pdf/7000.pdf',
+      downloadLink: '/pdf/7000.pdf'
     },
     {
       id: 35,
@@ -62,7 +70,9 @@ export function DocumentsPage() {
       size: '2.1 MB',
       date: '01.01.2025',
       type: 'Інструкція',
-      format: 'PDF'
+      format: 'PDF',
+      viewLink: '/pdf/Priklad-rozyasnennya-rahunku-za-elektrichnu-energiju.pdf',
+      downloadLink: '/pdf/Priklad-rozyasnennya-rahunku-za-elektrichnu-energiju.pdf'
     },
     {
       id: 32,
@@ -217,8 +227,8 @@ export function DocumentsPage() {
       date: '05.01.2025',
       type: 'Зразок документу',
       format: 'PDF',
-      viewLink: '/pdf/Dogovir_elektropostachannya_spozhuvachu.pdf',
-      downloadLink: '/pdf/Dogovir_elektropostachannya_spozhuvachu.pdf'
+      viewLink: '/pdf/Договір на постачання електричної енергії.pdf',
+      downloadLink: '/pdf/Договір на постачання електричної енергії.pdf'
     },
     {
       id: 20,
@@ -229,8 +239,8 @@ export function DocumentsPage() {
       date: '05.01.2025',
       type: 'Зразок документу',
       format: 'PDF',
-      viewLink: '/pdf/Dodatok-1-Zayava-priiednannya.pdf',
-      downloadLink: '/pdf/Dodatok-1-Zayava-priiednannya.pdf'
+      viewLink: '/pdf/Заява приєднання до договору.pdf',
+      downloadLink: '/pdf/Заява приєднання до договору.pdf'
     },
     {
       id: 21,
@@ -241,8 +251,8 @@ export function DocumentsPage() {
       date: '05.01.2025',
       type: 'Зразок документу',
       format: 'PDF',
-      viewLink: '/pdf/Dodatok_-_2_Komerciina_propoziciya.pdf',
-      downloadLink: '/pdf/Dodatok_-_2_Komerciina_propoziciya.pdf'
+      viewLink: '/pdf/Публічна комерційна пропозиція 1.pdf',
+      downloadLink: '/pdf/Публічна комерційна пропозиція 1.pdf'
     },
     {
       id: 36,
@@ -252,7 +262,9 @@ export function DocumentsPage() {
       size: '768 KB',
       date: '05.01.2025',
       type: 'Зразок документу',
-      format: 'PDF'
+      format: 'PDF',
+      viewLink: '/pdf/Публічна комерційна пропозиція 2.pdf',
+      downloadLink: '/pdf/Публічна комерційна пропозиція 2.pdf'
     },
     {
       id: 37,
@@ -262,7 +274,9 @@ export function DocumentsPage() {
       size: '912 KB',
       date: '05.01.2025',
       type: 'Зразок документу',
-      format: 'PDF'
+      format: 'PDF',
+      viewLink: '/pdf/Договір_купівлі_продажу_електричної_енергії_за_механізмом_самовиробництва.pdf',
+      downloadLink: '/pdf/Договір_купівлі_продажу_електричної_енергії_за_механізмом_самовиробництва.pdf'
     },
     {
       id: 38,
@@ -272,7 +286,9 @@ export function DocumentsPage() {
       size: '823 KB',
       date: '05.01.2025',
       type: 'Зразок документу',
-      format: 'PDF'
+      format: 'PDF',
+      viewLink: '/pdf/Публічна комерційна пропозиція 3 Активний споживач.pdf',
+      downloadLink: '/pdf/Публічна комерційна пропозиція 3 Активний споживач.pdf'
     },
     {
       id: 22,
@@ -282,7 +298,9 @@ export function DocumentsPage() {
       size: '2.1 MB',
       date: '10.01.2025',
       type: 'Інструкція',
-      format: 'PDF'
+      format: 'PDF',
+      viewLink: '/pdf/Zagalnyi_poryadok_znyattya_pokaziv.pdf',
+      downloadLink: '/pdf/Zagalnyi_poryadok_znyattya_pokaziv.pdf'
     },
     {
       id: 23,
@@ -292,7 +310,9 @@ export function DocumentsPage() {
       size: '1.9 MB',
       date: '10.01.2025',
       type: 'Інструкція',
-      format: 'PDF'
+      format: 'PDF',
+      viewLink: '/pdf/Perevagi-efektivnogo-kincevogo-vikoristannya-energii-spozhivachami-ta-poradi-shhodo-pidvishhennya-energoefektivnosti.pdf',
+      downloadLink: '/pdf/Perevagi-efektivnogo-kincevogo-vikoristannya-energii-spozhivachami-ta-poradi-shhodo-pidvishhennya-energoefektivnosti.pdf'
     },
     {
       id: 24,
@@ -302,17 +322,21 @@ export function DocumentsPage() {
       size: '1.5 MB',
       date: '10.01.2025',
       type: 'Інформаційний матеріал',
-      format: 'PDF'
+      format: 'PDF',
+      viewLink: '/pdf/Zagalnyi_poryadok_znyattya_pokaziv.pdf',
+      downloadLink: '/pdf/Zagalnyi_poryadok_znyattya_pokaziv.pdf'
     },
     {
       id: 25,
       category: 'consumer-info',
-      name: 'Поади щодо економії електроенергії',
+      name: 'Поради щодо економії електроенергії',
       description: 'Практичні рекомендації для зменшення споживання електричної енергії',
       size: '2.8 MB',
       date: '10.01.2025',
       type: 'Інформаційний матеріал',
-      format: 'PDF'
+      format: 'PDF',
+      viewLink: '/pdf/Perevagi-efektivnogo-kincevogo-vikoristannya-energii-spozhivachami-ta-poradi-shhodo-pidvishhennya-energoefektivnosti.pdf',
+      downloadLink: '/pdf/Perevagi-efektivnogo-kincevogo-vikoristannya-energii-spozhivachami-ta-poradi-shhodo-pidvishhennya-energoefektivnosti.pdf'
     },
     {
       id: 73,
@@ -322,7 +346,9 @@ export function DocumentsPage() {
       size: '1.2 MB',
       date: '10.01.2025',
       type: 'Довідник',
-      format: 'PDF'
+      format: 'PDF',
+      viewLink: '/pdf/Perevagi-efektivnogo-kincevogo-vikoristannya-energii-spozhivachami-ta-poradi-shhodo-pidvishhennya-energoefektivnosti.pdf',
+      downloadLink: '/pdf/Perevagi-efektivnogo-kincevogo-vikoristannya-energii-spozhivachami-ta-poradi-shhodo-pidvishhennya-energoefektivnosti.pdf'
     },
     {
       id: 74,
@@ -332,7 +358,9 @@ export function DocumentsPage() {
       size: '2.3 MB',
       date: '10.01.2025',
       type: 'Інструкція',
-      format: 'PDF'
+      format: 'PDF',
+      viewLink: '/pdf/Poryadok-zabezpechennya-standartiv-yakosti-Elektropostachannya-ta-kompensacii-za-ih-nevikonannya_compressed.pdf',
+      downloadLink: '/pdf/Poryadok-zabezpechennya-standartiv-yakosti-Elektropostachannya-ta-kompensacii-za-ih-nevikonannya_compressed.pdf'
     },
     {
       id: 75,
@@ -342,7 +370,9 @@ export function DocumentsPage() {
       size: '850 KB',
       date: '10.01.2025',
       type: 'Довідник',
-      format: 'PDF'
+      format: 'PDF',
+      viewLink: '/pdf/Posilannya-na-veb-storinki-regulyatora-ta-operatoriv-sistemi.pdf',
+      downloadLink: '/pdf/Posilannya-na-veb-storinki-regulyatora-ta-operatoriv-sistemi.pdf'
     },
     {
       id: 76,
@@ -352,7 +382,9 @@ export function DocumentsPage() {
       size: '1.9 MB',
       date: '10.01.2025',
       type: 'Інформаційний матеріал',
-      format: 'PDF'
+      format: 'PDF',
+      viewLink: '/pdf/Prava-spozhivachiv-peredbacheni-zakonodavstvom.pdf',
+      downloadLink: '/pdf/Prava-spozhivachiv-peredbacheni-zakonodavstvom.pdf'
     },
     {
       id: 77,
@@ -362,7 +394,9 @@ export function DocumentsPage() {
       size: '1.7 MB',
       date: '10.01.2025',
       type: 'Інструкція',
-      format: 'PDF'
+      format: 'PDF',
+      viewLink: '/pdf/Vidkljuchennya-ta-vidnovlennya-elektrozhivlennya.pdf',
+      downloadLink: '/pdf/Vidkljuchennya-ta-vidnovlennya-elektrozhivlennya.pdf'
     },
     {
       id: 78,
@@ -372,7 +406,9 @@ export function DocumentsPage() {
       size: '3.1 MB',
       date: '10.01.2025',
       type: 'Інформаційний матеріал',
-      format: 'PDF'
+      format: 'PDF',
+      viewLink: '/pdf/Vidkljuchennya-ta-vidnovlennya-elektrozhivlennya.pdf',
+      downloadLink: '/pdf/Vidkljuchennya-ta-vidnovlennya-elektrozhivlennya.pdf'
     },
     {
       id: 79,
@@ -382,7 +418,9 @@ export function DocumentsPage() {
       size: '2.0 MB',
       date: '10.01.2025',
       type: 'Інструкція',
-      format: 'PDF'
+      format: 'PDF',
+      viewLink: '/pdf/Poryadok-ukladannya-dogovriv-pro-postachannya-elektrychnoyi-energiyi-spozhyvachu-za-vilnymy-tsinamy.pdf',
+      downloadLink: '/pdf/Poryadok-ukladannya-dogovriv-pro-postachannya-elektrychnoyi-energiyi-spozhyvachu-za-vilnymy-tsinamy.pdf'
     },
     {
       id: 80,
@@ -392,7 +430,9 @@ export function DocumentsPage() {
       size: '2.5 MB',
       date: '10.01.2025',
       type: 'Нормативний документ',
-      format: 'PDF'
+      format: 'PDF',
+      viewLink: '/pdf/Zagalni-umovi-elektropostachannya.pdf',
+      downloadLink: '/pdf/Zagalni-umovi-elektropostachannya.pdf'
     },
     {
       id: 81,
@@ -402,7 +442,9 @@ export function DocumentsPage() {
       size: '3.2 MB',
       date: '10.01.2025',
       type: 'Інформаційний матеріал',
-      format: 'PDF'
+      format: 'PDF',
+      viewLink: '/pdf/Perevagi-efektivnogo-kincevogo-vikoristannya-energii-spozhivachami-ta-poradi-shhodo-pidvishhennya-energoefektivnosti.pdf',
+      downloadLink: '/pdf/Perevagi-efektivnogo-kincevogo-vikoristannya-energii-spozhivachami-ta-poradi-shhodo-pidvishhennya-energoefektivnosti.pdf'
     },
     {
       id: 82,
@@ -412,7 +454,9 @@ export function DocumentsPage() {
       size: '1.8 MB',
       date: '10.01.2025',
       type: 'Інструкція',
-      format: 'PDF'
+      format: 'PDF',
+      viewLink: '/pdf/Poryadok-ukladannya-dogovriv-pro-postachannya-elektrychnoyi-energiyi-spozhyvachu-za-vilnymy-tsinamy.pdf',
+      downloadLink: '/pdf/Poryadok-ukladannya-dogovriv-pro-postachannya-elektrychnoyi-energiyi-spozhyvachu-za-vilnymy-tsinamy.pdf'
     },
     {
       id: 83,
@@ -422,7 +466,9 @@ export function DocumentsPage() {
       size: '2.2 MB',
       date: '10.01.2025',
       type: 'Інструкція',
-      format: 'PDF'
+      format: 'PDF',
+      viewLink: '/pdf/Procedura_rozghliadu_skarh_spozhyvachiv.pdf',
+      downloadLink: '/pdf/Procedura_rozghliadu_skarh_spozhyvachiv.pdf'
     },
     {
       id: 84,
@@ -432,7 +478,9 @@ export function DocumentsPage() {
       size: '1.6 MB',
       date: '10.01.2025',
       type: 'Інструкція',
-      format: 'PDF'
+      format: 'PDF',
+      viewLink: '/pdf/Zagalnyi_poryadok_znyattya_pokaziv.pdf',
+      downloadLink: '/pdf/Zagalnyi_poryadok_znyattya_pokaziv.pdf'
     },
     {
       id: 85,
@@ -442,7 +490,9 @@ export function DocumentsPage() {
       size: '1.4 MB',
       date: '10.01.2025',
       type: 'Інструкція',
-      format: 'PDF'
+      format: 'PDF',
+      viewLink: '/pdf/Poryadok-zmini-elektropostachalnika-za-iniciativoju-spozhivacha.pdf',
+      downloadLink: '/pdf/Poryadok-zmini-elektropostachalnika-za-iniciativoju-spozhivacha.pdf'
     },
     {
       id: 86,
@@ -452,7 +502,9 @@ export function DocumentsPage() {
       size: '1.1 MB',
       date: '10.01.2025',
       type: 'Довідник',
-      format: 'PDF'
+      format: 'PDF',
+      viewLink: '/pdf/Poryadok-roboti-kontakt.pdf',
+      downloadLink: '/pdf/Poryadok-roboti-kontakt.pdf'
     },
     {
       id: 87,
@@ -462,7 +514,9 @@ export function DocumentsPage() {
       size: '1.3 MB',
       date: '10.01.2025',
       type: 'Довідник',
-      format: 'PDF'
+      format: 'PDF',
+      viewLink: '/pdf/Poryadok-roboti-kontakt.pdf',
+      downloadLink: '/pdf/Poryadok-roboti-kontakt.pdf'
     },
     {
       id: 26,
@@ -472,7 +526,9 @@ export function DocumentsPage() {
       size: '850 KB',
       date: '05.01.2025',
       type: 'Форма',
-      format: 'PDF'
+      format: 'PDF',
+      viewLink: '/pdf/Dodatok-1-Zrazok-zvernennya_KEM-2.pdf',
+      downloadLink: '/pdf/Dodatok-1-Zrazok-zvernennya_KEM-2.pdf'
     },
     {
       id: 27,
@@ -482,7 +538,9 @@ export function DocumentsPage() {
       size: '1.7 MB',
       date: '05.01.2025',
       type: 'Регламент',
-      format: 'PDF'
+      format: 'PDF',
+      viewLink: '/pdf/Procedura_rozghliadu_skarh_spozhyvachiv.pdf',
+      downloadLink: '/pdf/Procedura_rozghliadu_skarh_spozhyvachiv.pdf'
     },
     {
       id: 28,
@@ -492,7 +550,9 @@ export function DocumentsPage() {
       size: '3.4 MB',
       date: '01.01.2025',
       type: 'Інформаційний матеріал',
-      format: 'PDF'
+      format: 'PDF',
+      viewLink: '/pdf/Dzherela-EE-za-2019r.-EZ.pdf',
+      downloadLink: '/pdf/Dzherela-EE-za-2019r.-EZ.pdf'
     },
     {
       id: 29,
@@ -502,7 +562,9 @@ export function DocumentsPage() {
       size: '2.6 MB',
       date: '01.01.2025',
       type: 'Інформаційний матеріал',
-      format: 'PDF'
+      format: 'PDF',
+      viewLink: '/pdf/Dzherela-EE-za-2020r.-EZ.pdf',
+      downloadLink: '/pdf/Dzherela-EE-za-2020r.-EZ.pdf'
     },
     {
       id: 39,
@@ -512,7 +574,9 @@ export function DocumentsPage() {
       size: '2.7 MB',
       date: '01.01.2025',
       type: 'Інформаційний матеріал',
-      format: 'PDF'
+      format: 'PDF',
+      viewLink: '/pdf/Dzherela-EE-za-2021r.-EZ.pdf',
+      downloadLink: '/pdf/Dzherela-EE-za-2021r.-EZ.pdf'
     },
     {
       id: 40,
@@ -522,7 +586,9 @@ export function DocumentsPage() {
       size: '2.8 MB',
       date: '01.01.2025',
       type: 'Інформаційний матеріал',
-      format: 'PDF'
+      format: 'PDF',
+      viewLink: '/pdf/Dzherela-EE-za-2022r.-EZ.pdf',
+      downloadLink: '/pdf/Dzherela-EE-za-2022r.-EZ.pdf'
     },
     {
       id: 41,
@@ -532,7 +598,9 @@ export function DocumentsPage() {
       size: '2.9 MB',
       date: '01.01.2025',
       type: 'Інформаційний матеріал',
-      format: 'PDF'
+      format: 'PDF',
+      viewLink: '/pdf/Dzherela-EE-za-2023r.-EZ.pdf',
+      downloadLink: '/pdf/Dzherela-EE-za-2023r.-EZ.pdf'
     },
     {
       id: 42,
@@ -542,7 +610,9 @@ export function DocumentsPage() {
       size: '3.0 MB',
       date: '01.01.2025',
       type: 'Інформаційний матеріал',
-      format: 'PDF'
+      format: 'PDF',
+      viewLink: '/pdf/Dzherela-EE-za-2024r.-EZ.pdf',
+      downloadLink: '/pdf/Dzherela-EE-za-2024r.-EZ.pdf'
     },
     {
       id: 43,
@@ -552,7 +622,9 @@ export function DocumentsPage() {
       size: '4.2 MB',
       date: '01.01.2025',
       type: 'Статистичний звіт',
-      format: 'PDF'
+      format: 'PDF',
+      viewLink: '/pdf/Chastki_dzherel_pomisyachno_za_2019_rik.pdf',
+      downloadLink: '/pdf/Chastki_dzherel_pomisyachno_za_2019_rik.pdf'
     },
     {
       id: 44,
@@ -562,7 +634,9 @@ export function DocumentsPage() {
       size: '4.3 MB',
       date: '01.01.2025',
       type: 'Статистичний звіт',
-      format: 'PDF'
+      format: 'PDF',
+      viewLink: '/pdf/Chastki_dzherel_pomisyachno_za_2020_rik.pdf',
+      downloadLink: '/pdf/Chastki_dzherel_pomisyachno_za_2020_rik.pdf'
     },
     {
       id: 45,
@@ -572,7 +646,9 @@ export function DocumentsPage() {
       size: '4.4 MB',
       date: '01.01.2025',
       type: 'Статистичний звіт',
-      format: 'PDF'
+      format: 'PDF',
+      viewLink: '/pdf/Chastki_dzherel_pomisyachno_za_2021_rik.pdf',
+      downloadLink: '/pdf/Chastki_dzherel_pomisyachno_za_2021_rik.pdf'
     },
     {
       id: 46,
@@ -582,7 +658,9 @@ export function DocumentsPage() {
       size: '4.5 MB',
       date: '01.01.2025',
       type: 'Статистичний звіт',
-      format: 'PDF'
+      format: 'PDF',
+      viewLink: '/pdf/Chastki_dzherel_pomisyachno_za_2022_rik.pdf',
+      downloadLink: '/pdf/Chastki_dzherel_pomisyachno_za_2022_rik.pdf'
     },
     {
       id: 47,
@@ -592,7 +670,9 @@ export function DocumentsPage() {
       size: '4.6 MB',
       date: '01.01.2025',
       type: 'Статистичний звіт',
-      format: 'PDF'
+      format: 'PDF',
+      viewLink: '/pdf/Chastki_dzherel_pomisyachno_za_2023_rik.pdf',
+      downloadLink: '/pdf/Chastki_dzherel_pomisyachno_za_2023_rik.pdf'
     },
     {
       id: 48,
@@ -602,7 +682,9 @@ export function DocumentsPage() {
       size: '4.7 MB',
       date: '01.01.2025',
       type: 'Статистичний звіт',
-      format: 'PDF'
+      format: 'PDF',
+      viewLink: '/pdf/Chastki_dzherel_pomisyachno_za_2024_rik.pdf',
+      downloadLink: '/pdf/Chastki_dzherel_pomisyachno_za_2024_rik.pdf'
     },
     {
       id: 49,
@@ -634,12 +716,14 @@ export function DocumentsPage() {
     {
       id: 30,
       category: 'reports',
-      name: 'Звіти щодо розгляду звернень, скарг, претензій',
+      name: 'Звіт щодо розгляду звернень, скарг, претензій',
       description: 'Підсумкові звіти про розгляд звернень та скарг споживачів компанії',
       size: '3.8 MB',
       date: '31.12.2024',
       type: 'Звіт',
-      format: 'PDF'
+      format: 'PDF',
+      viewLink: '/pdf/Richnij-zvit-shhodo-rozglyadu-zvernen.pdf',
+      downloadLink: '/pdf/Richnij-zvit-shhodo-rozglyadu-zvernen.pdf'
     },
     {
       id: 31,
@@ -649,7 +733,9 @@ export function DocumentsPage() {
       size: '4.5 MB',
       date: '31.12.2018',
       type: 'Звіт',
-      format: 'PDF'
+      format: 'PDF',
+      viewLink: '/pdf/Dodatok-8_2018_EZ.pdf',
+      downloadLink: '/pdf/Dodatok-8_2018_EZ.pdf'
     },
     {
       id: 52,
@@ -659,7 +745,9 @@ export function DocumentsPage() {
       size: '4.6 MB',
       date: '31.12.2019',
       type: 'Звіт',
-      format: 'PDF'
+      format: 'PDF',
+      viewLink: '/pdf/Dodatok-8_2019_EZ.pdf',
+      downloadLink: '/pdf/Dodatok-8_2019_EZ.pdf'
     },
     {
       id: 53,
@@ -669,7 +757,9 @@ export function DocumentsPage() {
       size: '4.7 MB',
       date: '31.12.2020',
       type: 'Звіт',
-      format: 'PDF'
+      format: 'PDF',
+      viewLink: '/pdf/Dodatok-8_2020_EZ.pdf',
+      downloadLink: '/pdf/Dodatok-8_2020_EZ.pdf'
     },
     {
       id: 54,
@@ -679,7 +769,9 @@ export function DocumentsPage() {
       size: '4.8 MB',
       date: '31.12.2021',
       type: 'Звіт',
-      format: 'PDF'
+      format: 'PDF',
+      viewLink: '/pdf/Dodatok-8_2021_EZ.pdf',
+      downloadLink: '/pdf/Dodatok-8_2021_EZ.pdf'
     },
     {
       id: 55,
@@ -689,7 +781,9 @@ export function DocumentsPage() {
       size: '4.9 MB',
       date: '31.12.2022',
       type: 'Звіт',
-      format: 'PDF'
+      format: 'PDF',
+      viewLink: '/pdf/Dodatok-8_2022_EZ.pdf',
+      downloadLink: '/pdf/Dodatok-8_2022_EZ.pdf'
     },
     {
       id: 56,
@@ -699,7 +793,9 @@ export function DocumentsPage() {
       size: '5.0 MB',
       date: '31.12.2023',
       type: 'Звіт',
-      format: 'PDF'
+      format: 'PDF',
+      viewLink: '/pdf/Dodatok-8_2023_EZ.pdf',
+      downloadLink: '/pdf/Dodatok-8_2023_EZ.pdf'
     },
     {
       id: 57,
@@ -709,7 +805,9 @@ export function DocumentsPage() {
       size: '6.2 MB',
       date: '31.03.2019',
       type: 'Фінансовий звіт',
-      format: 'PDF'
+      format: 'PDF',
+      viewLink: '/pdf/FinZvit-EZ-2019-01-01.pdf',
+      downloadLink: '/pdf/FinZvit-EZ-2019-01-01.pdf'
     },
     {
       id: 58,
@@ -719,7 +817,9 @@ export function DocumentsPage() {
       size: '6.3 MB',
       date: '31.03.2020',
       type: 'Фінансовий звіт',
-      format: 'PDF'
+      format: 'PDF',
+      viewLink: '/pdf/FinZvit-EZ-2020-01-01.pdf',
+      downloadLink: '/pdf/FinZvit-EZ-2020-01-01.pdf'
     },
     {
       id: 59,
@@ -729,7 +829,9 @@ export function DocumentsPage() {
       size: '6.4 MB',
       date: '31.03.2021',
       type: 'Фінансовий звіт',
-      format: 'PDF'
+      format: 'PDF',
+      viewLink: '/pdf/FinZvit-EZ-2021-01-01.pdf',
+      downloadLink: '/pdf/FinZvit-EZ-2021-01-01.pdf'
     },
     {
       id: 60,
@@ -739,17 +841,21 @@ export function DocumentsPage() {
       size: '6.5 MB',
       date: '31.03.2022',
       type: 'Фінансовий звіт',
-      format: 'PDF'
+      format: 'PDF',
+      viewLink: '/pdf/FinZvit-EZ-2022-01-01.pdf',
+      downloadLink: '/pdf/FinZvit-EZ-2022-01-01.pdf'
     },
     {
       id: 61,
       category: 'reports',
       name: 'Річна звітність 2022',
-      description: 'Консолідована річн�� фінансова та операційна звітність компанії за 2022 рік',
+      description: 'Консолідована річна фінансова та операційна звітність компанії за 2022 рік',
       size: '6.6 MB',
       date: '31.03.2023',
       type: 'Фінансовий звіт',
-      format: 'PDF'
+      format: 'PDF',
+      viewLink: '/pdf/FinZvit-EZ-2023-01-01.pdf',
+      downloadLink: '/pdf/FinZvit-EZ-2023-01-01.pdf'
     },
     {
       id: 62,
@@ -759,7 +865,9 @@ export function DocumentsPage() {
       size: '6.7 MB',
       date: '31.03.2024',
       type: 'Фінансовий звіт',
-      format: 'PDF'
+      format: 'PDF',
+      viewLink: '/pdf/FinZvit-EZ-2024-01-01.pdf',
+      downloadLink: '/pdf/FinZvit-EZ-2024-01-01.pdf'
     },
     {
       id: 63,
@@ -769,7 +877,9 @@ export function DocumentsPage() {
       size: '3.2 MB',
       date: '31.03.2024',
       type: 'Аудиторський звіт',
-      format: 'PDF'
+      format: 'PDF',
+      viewLink: '/pdf/2024_Звіт аудитора Енергозахід full.pdf',
+      downloadLink: '/pdf/2024_Звіт аудитора Енергозахід full.pdf'
     },
     {
       id: 64,
@@ -779,7 +889,9 @@ export function DocumentsPage() {
       size: '2.8 MB',
       date: '31.12.2019',
       type: 'Звіт',
-      format: 'PDF'
+      format: 'PDF',
+      viewLink: '/pdf/232110446_11S_19.pdf',
+      downloadLink: '/pdf/232110446_11S_19.pdf'
     },
     {
       id: 65,
@@ -789,7 +901,9 @@ export function DocumentsPage() {
       size: '2.9 MB',
       date: '31.12.2020',
       type: 'Звіт',
-      format: 'PDF'
+      format: 'PDF',
+      viewLink: '/pdf/232110446_11S_20.pdf',
+      downloadLink: '/pdf/232110446_11S_20.pdf'
     },
     {
       id: 66,
@@ -799,7 +913,9 @@ export function DocumentsPage() {
       size: '3.0 MB',
       date: '31.12.2021',
       type: 'Звіт',
-      format: 'PDF'
+      format: 'PDF',
+      viewLink: '/pdf/232110446_11S_21.pdf',
+      downloadLink: '/pdf/232110446_11S_21.pdf'
     },
     {
       id: 67,
@@ -809,7 +925,9 @@ export function DocumentsPage() {
       size: '3.1 MB',
       date: '31.12.2022',
       type: 'Звіт',
-      format: 'PDF'
+      format: 'PDF',
+      viewLink: '/pdf/232110446_11S_22.pdf',
+      downloadLink: '/pdf/232110446_11S_22.pdf'
     },
     {
       id: 68,
@@ -819,7 +937,9 @@ export function DocumentsPage() {
       size: '3.2 MB',
       date: '31.12.2023',
       type: 'Звіт',
-      format: 'PDF'
+      format: 'PDF',
+      viewLink: '/pdf/232110446_11S_23.pdf',
+      downloadLink: '/pdf/232110446_11S_23.pdf'
     },
     {
       id: 69,
@@ -829,7 +949,9 @@ export function DocumentsPage() {
       size: '4.2 MB',
       date: '31.12.2021',
       type: 'Звіт',
-      format: 'PDF'
+      format: 'PDF',
+      viewLink: '/pdf/Zvitnist-2021.pdf',
+      downloadLink: '/pdf/Zvitnist-2021.pdf'
     },
     {
       id: 70,
@@ -839,7 +961,9 @@ export function DocumentsPage() {
       size: '4.3 MB',
       date: '31.12.2022',
       type: 'Звіт',
-      format: 'PDF'
+      format: 'PDF',
+      viewLink: '/pdf/Zvitnist-2022.pdf',
+      downloadLink: '/pdf/Zvitnist-2022.pdf'
     },
     {
       id: 71,
@@ -849,7 +973,9 @@ export function DocumentsPage() {
       size: '4.4 MB',
       date: '31.12.2023',
       type: 'Звіт',
-      format: 'PDF'
+      format: 'PDF',
+      viewLink: '/pdf/Zvitnist-2023.pdf',
+      downloadLink: '/pdf/Zvitnist-2023.pdf'
     },
     {
       id: 72,
@@ -859,7 +985,9 @@ export function DocumentsPage() {
       size: '4.5 MB',
       date: '31.12.2024',
       type: 'Звіт',
-      format: 'PDF'
+      format: 'PDF',
+      viewLink: '/pdf/Zvitnist-2024.pdf',
+      downloadLink: '/pdf/Zvitnist-2024.pdf'
     }
   ];
 

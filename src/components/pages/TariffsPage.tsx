@@ -21,11 +21,14 @@ export function TariffsPage() {
       size: '956 KB',
       fileName: '/pdf/Priklad-rozyasnennya-rahunku-za-elektrichnu-energiju.pdf'
     },
-    { name: 'Ціна', size: '1.2 MB' }
+    { name: 'Ціна', 
+      size: '1.2 MB',
+      fileName: '/pdf/7000.pdf'
+    }
   ];
 
   // 🔽 ДОДАЛИ ДОПОМІЖНУ ФУНКЦІЮ ДЛЯ ЗАВАНТАЖЕННЯ
-  const downloadFile = (url?: string) => {
+  function downloadFile(url?: string) {
     if (!url) return;
 
     const a = document.createElement('a');
@@ -35,7 +38,7 @@ export function TariffsPage() {
     document.body.appendChild(a);
     a.click();
     document.body.removeChild(a);
-  };
+  }
 
   return (
     <div className="w-full">

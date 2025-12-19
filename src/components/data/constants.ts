@@ -94,15 +94,15 @@ export const consumerTypes = [
 export const documentsPreview = [
   { name: 'Ліцензія на постачання електроенергії', 
     size: '2.4 MB',
-    fileName: '/pdf/Dogovir_elektropostachannya_spozhuvachu.pdf'
+    fileName: '/pdf/Постанова про видачу ліцензії від 11.09.18.pdf'
   },
   { name: 'Тарифи на електроенергію 2025', 
     size: '1.2 MB',
-    fileName: '/pdf/Dogovir_elektropostachannya_spozhuvachu.pdf'
+    fileName: '/pdf/Tarifi_na_poslugi_z_rozpodilu_elektrichnoi_energii_shho_dijut_z_01 (1).pdf'
   },
   { name: 'Договір електропостачання (зразок)', 
     size: '856 KB', 
-    fileName: '/pdf/Dogovir_elektropostachannya_spozhuvachu.pdf' 
+    fileName: '/pdf/Договір на постачання електричної енергії.pdf' 
   }
 ];
 

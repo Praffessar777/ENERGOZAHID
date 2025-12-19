@@ -79,7 +79,7 @@ export function Footer({ onNavigate }: FooterProps) {
               <div className="flex items-center space-x-3 text-sm">
                 <Clock className="w-4 h-4 text-[#264A96] flex-shrink-0" />
                 <div className="text-gray-600">
-                  <div>Пн-Пт: 9:00-18:00</div>
+                  <div>Пн-Пт: 10:00-18:00</div>
                   <div>Сб-Нд: вихідний</div>
                 </div>
               </div>
