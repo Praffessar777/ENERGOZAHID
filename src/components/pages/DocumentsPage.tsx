@@ -366,14 +366,14 @@ export function DocumentsPage() {
     {
       id: 34,
       category: 'consumer-info',
-      name: 'Посилання на веб-сторінки регулятора та операторів системи',
+      name: 'Посилання на веб-сторінки Регулятора та операторів системи',
       description: 'Корисні посилання на офіційні сайти НКРЕКП, операторів та інших учасників ринку',
       size: '850 KB',
       date: '10.01.2025',
       type: 'Довідник',
       format: 'PDF',
-      viewLink: '/pdf/Posilannya-na-veb-storinki-regulyatora-ta-operatoriv-sistemi.pdf',
-      downloadLink: '/pdf/Posilannya-na-veb-storinki-regulyatora-ta-operatoriv-sistemi.pdf'
+      viewLink: '/pdf/Посилання_на_вебсторінки_регулятора_центральнів_органів_влади_ОСР.pdf',
+      downloadLink: '/pdf/Посилання_на_вебсторінки_регулятора_центральнів_органів_влади_ОСР.pdf'
     },
     {
       id: 35,
@@ -384,8 +384,8 @@ export function DocumentsPage() {
       date: '10.01.2025',
       type: 'Інформаційний матеріал',
       format: 'PDF',
-      viewLink: '/pdf/Prava-spozhivachiv-peredbacheni-zakonodavstvom.pdf',
-      downloadLink: '/pdf/Prava-spozhivachiv-peredbacheni-zakonodavstvom.pdf'
+      viewLink: '/pdf/Права споживача.pdf',
+      downloadLink: '/pdf/Права споживача.pdf'
     },
     {
       id: 36,
