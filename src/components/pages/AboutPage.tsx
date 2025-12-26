@@ -35,7 +35,7 @@ export function AboutPage() {
                 Про
               </div>
               <div className="text-3xl md:text-4xl lg:text-5xl leading-tight">
-                <span className="block">ЕНЕРГОЗАХІД</span>
+                <span className="block">ТОВ &quot;ЕНЕРГОЗАХІД&quot;</span>
               </div>
             </motion.h1>
             
@@ -91,7 +91,10 @@ export function AboutPage() {
               НАША МІСІЯ
             </h2>
             <p className="text-lg text-gray-600 leading-relaxed mb-8">
-              ЕНЕРГОЗАХІД — це надійний партнер у сфері електропостачання, який понад 20 років 
+              ТОВАРИСТВО З ОБМЕЖЕНОЮ ВІДПОВІДАЛЬНІСТЮ «ЕНЕРГОЗАХІД»  (код ЄДРПОУ 32110446) - здійснює свою діяльність  на підставі ліцензії на постачання електричної енергії споживачу, оформленої Постановою НКРЕКП №980 від 11.09.2018р
+            </p>
+            <p className="text-lg text-gray-600 leading-relaxed mb-8">
+              ТОВ &quot;ЕНЕРГОЗАХІД&quot; — це надійний партнер у сфері електропостачання, який понад 20 років 
               забезпечує стабільну подачу електроенергії для непобутових споживачів по всій Україні.
             </p>
             <p className="text-lg text-gray-600 leading-relaxed">
@@ -102,7 +105,7 @@ export function AboutPage() {
         </div>
       </Section>
 
-      <Section title="ЕНЕРГОЗАХІД У ЦИФРАХ" background="gray">
+      <Section title="ТОВ &quot;ЕНЕРГОЗАХІД&quot; У ЦИФРАХ" background="gray">
         <div className="grid grid-cols-2 lg:grid-cols-4 gap-8">
           {aboutStats.map((stat, index) => (
             <motion.div

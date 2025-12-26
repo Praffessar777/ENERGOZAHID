@@ -8,6 +8,7 @@ import { DocumentsPage } from "./components/pages/DocumentsPage";
 import { ElectricalSafetyPage } from "./components/pages/ElectricalSafetyPage";
 import { ContactsPage } from "./components/pages/ContactsPage";
 import { ContractPage } from "./components/pages/ContractPage";
+import { PrivacyPolicyPage } from "./components/pages/PrivacyPolicyPage";
 import { Toaster } from "./components/ui/sonner";
 
 export default function App() {
@@ -30,7 +31,9 @@ export default function App() {
       case "contacts":
         return <ContactsPage />;
       case "contract":
-        return <ContractPage />;
+        return <ContractPage onNavigate={setCurrentPage} />;
+      case "privacy":
+        return <PrivacyPolicyPage />;
       default:
         return <HomePage onNavigate={setCurrentPage} />;
     }

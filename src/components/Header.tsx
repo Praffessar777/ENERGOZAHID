@@ -76,6 +76,7 @@ export function Header({ currentPage, onNavigate }: HeaderProps) {
                   КАБІНЕТ СПОЖИВАЧА
                 </Button>
               }
+              onNavigate={onNavigate}   // 👈 пробросили
             />
           </div>
 
@@ -124,6 +125,7 @@ export function Header({ currentPage, onNavigate }: HeaderProps) {
                         КАБІНЕТ СПОЖИВАЧА
                       </Button>
                     }
+                    onNavigate={onNavigate}   // 👈 і тут теж
                   />
                 </div>
               </nav>

@@ -5,7 +5,7 @@ import { Input } from '../ui/input';
 import { Label } from '../ui/label';
 import { Textarea } from '../ui/textarea';
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from '../ui/select';
-import { AlertTriangle, Phone, Mail, Clock, X } from 'lucide-react';
+import { AlertTriangle, Phone, Mail, Clock } from 'lucide-react';
 import { toast } from 'sonner@2.0.3';
 
 interface SafetyThreatFormProps {
@@ -24,42 +24,71 @@ export function SafetyThreatForm({ open, onOpenChange }: SafetyThreatFormProps) 
     description: ''
   });
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const [isSubmitting, setIsSubmitting] = useState(false); // 👈 додали стан відправки
+
+  const resetForm = () => {
+    setFormData({
+      name: '',
+      phone: '',
+      email: '',
+      location: '',
+      threatType: '',
+      urgencyLevel: '',
+      description: ''
+    });
+  };
+
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    
-    // Validate required fields
-    if (!formData.name || !formData.phone || !formData.location || !formData.threatType || !formData.urgencyLevel || !formData.description) {
-      toast.error('Будь ласка, заповніть всі обов\'язкові поля');
+
+    // Валідація обов'язкових полів
+    if (
+      !formData.name ||
+      !formData.phone ||
+      !formData.location ||
+      !formData.threatType ||
+      !formData.urgencyLevel ||
+      !formData.description
+    ) {
+      toast.error("Будь ласка, заповніть всі обов'язкові поля");
       return;
     }
 
-    // Here you would typically send the data to your backend
-    console.log('Form submitted:', formData);
-    toast.success('Повідомлення успішно відправлено');
-    
-    // Reset form and close dialog
-    setFormData({
-      name: '',
-      phone: '',
-      email: '',
-      location: '',
-      threatType: '',
-      urgencyLevel: '',
-      description: ''
-    });
-    onOpenChange(false);
+    if (isSubmitting) return;
+    setIsSubmitting(true);
+
+    try {
+      const response = await fetch('https://formspree.io/f/xreznyng', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+          Accept: 'application/json',
+        },
+        body: JSON.stringify({
+          formType: 'safety_threat_report',
+          source: 'SafetyThreatForm (Електробезпека)',
+          ...formData,
+        }),
+      });
+
+      if (response.ok) {
+        toast.success('Повідомлення успішно відправлено');
+        resetForm();
+        onOpenChange(false);
+      } else {
+        console.error('Formspree error:', await response.text());
+        toast.error('Сталася помилка при відправці. Спробуйте, будь ласка, пізніше.');
+      }
+    } catch (error) {
+      console.error('Formspree error:', error);
+      toast.error('Сталася помилка при відправці. Перевірте підключення до інтернету.');
+    } finally {
+      setIsSubmitting(false);
+    }
   };
 
   const handleCancel = () => {
-    setFormData({
-      name: '',
-      phone: '',
-      email: '',
-      location: '',
-      threatType: '',
-      urgencyLevel: '',
-      description: ''
-    });
+    resetForm();
     onOpenChange(false);
   };
 
@@ -101,7 +130,7 @@ export function SafetyThreatForm({ open, onOpenChange }: SafetyThreatFormProps) 
               <div className="flex items-center space-x-2 text-red-700">
                 <Mail className="w-4 h-4" />
                 <span className="text-sm">
-                  Email: <span className="font-semibold">office@energowest.org</span>
+                  Email: <span className="font-semibold">sales@enerzap.org</span>
                 </span>
               </div>
               <div className="flex items-center space-x-2 text-red-700">
@@ -187,8 +216,8 @@ export function SafetyThreatForm({ open, onOpenChange }: SafetyThreatFormProps) 
                 onValueChange={(value) => setFormData({ ...formData, threatType: value })}
                 required
               >
-                <SelectTrigger 
-                  id="threatType" 
+                <SelectTrigger
+                  id="threatType"
                   className="bg-gray-50 border-gray-200 focus:bg-white focus:ring-2 focus:ring-blue-400 focus:border-blue-500"
                 >
                   <SelectValue placeholder="Оберіть тип загрози" />
@@ -213,8 +242,8 @@ export function SafetyThreatForm({ open, onOpenChange }: SafetyThreatFormProps) 
                 onValueChange={(value) => setFormData({ ...formData, urgencyLevel: value })}
                 required
               >
-                <SelectTrigger 
-                  id="urgencyLevel" 
+                <SelectTrigger
+                  id="urgencyLevel"
                   className="bg-gray-50 border-gray-200 focus:bg-white focus:ring-2 focus:ring-blue-400 focus:border-blue-500"
                 >
                   <SelectValue placeholder="Оберіть рівень терміновості" />
@@ -251,6 +280,7 @@ export function SafetyThreatForm({ open, onOpenChange }: SafetyThreatFormProps) 
               variant="outline"
               onClick={handleCancel}
               className="w-full sm:w-auto px-8 border-gray-300 text-gray-700 hover:bg-gray-50"
+              disabled={isSubmitting}
             >
               Скасувати
             </Button>
@@ -258,8 +288,9 @@ export function SafetyThreatForm({ open, onOpenChange }: SafetyThreatFormProps) 
               type="submit"
               className="w-full sm:w-auto px-8 text-white hover:opacity-90"
               style={{ background: '#3B82F6' }}
+              disabled={isSubmitting}
             >
-              Відправити повідомлення
+              {isSubmitting ? 'Надсилаємо...' : 'Відправити повідомлення'}
             </Button>
           </div>
         </form>

@@ -27,7 +27,7 @@ export function DocumentsPage() {
       downloadLink: '/pdf/Постанова про видачу ліцензії від 11.09.18.pdf'
     },
     {
-      id: 3,
+      id: 2,
       category: 'tariffs',
       name: 'Структура тарифу на послуги з передачі електричної енергії',
       description: 'Офіційні тарифи на електричну енергію для непобутових споживачів',
@@ -39,7 +39,7 @@ export function DocumentsPage() {
       downloadLink: '/pdf/Struktura_taryfu_na_poslugy_z_rozpodilu_ee.pdf'
     },
     {
-      id: 4,
+      id: 3,
       category: 'tariffs',
       name: 'Тарифи на послуги з розподілу електричної енергії, що діють з 01 січня 2025 року',
       description: 'Ціни на технічне обслуговування, консультації та додаткові послуги',
@@ -51,7 +51,7 @@ export function DocumentsPage() {
       downloadLink: '/pdf/Tarifi_na_poslugi_z_rozpodilu_elektrichnoi_energii_shho_dijut_z_01 (1).pdf'
     },
     {
-      id: 34,
+      id: 4,
       category: 'tariffs',
       name: 'Ціна',
       description: 'Актуальна інформація про ціни на електричну енергію для споживачів',
@@ -63,7 +63,7 @@ export function DocumentsPage() {
       downloadLink: '/pdf/7000.pdf'
     },
     {
-      id: 35,
+      id: 5,
       category: 'tariffs',
       name: 'Роз\'яснення до рахунку за електричну енергію',
       description: 'Детальне пояснення складових рахунку та методики нарахування платежів',
@@ -75,7 +75,7 @@ export function DocumentsPage() {
       downloadLink: '/pdf/Priklad-rozyasnennya-rahunku-za-elektrichnu-energiju.pdf'
     },
     {
-      id: 32,
+      id: 6,
       category: 'tariffs',
       name: 'Ціни на електроенергію для побутових і непобутових споживачів в Україні - дані Держстат',
       description: 'Статистичні дані Державної служби статистики України щодо цін на електричну енергію',
@@ -84,16 +84,17 @@ export function DocumentsPage() {
       externalLink: 'https://www.oree.com.ua/index.php/eu_prices'
     },
     {
-      id: 33,
+      id: 7,
       category: 'tariffs',
       name: 'Порівняння цін/тарифів на товари, послуги в Україні та інших державах',
       description: 'Порівняльний аналіз цін та тарифів на електроенергію в Україні та європейських країнах',
       date: '01.01.2025',
       type: 'Аналітичний звіт',
-      externalLink: 'https://ec.europa.eu/eurostat/databrowser/404-product/TEN00117?lang=en'
+      viewLink: '/pdf/Electricity_Price_Comparison_2025.pdf',
+      downloadLink: '/pdf/Electricity_Price_Comparison_2025.pdf'
     },
     {
-      id: 5,
+      id: 8,
       category: 'legal',
       name: 'Закон України "Про ринок електричної енергії"',
       description: 'Основний законодавчий акт, що регулює функціонування ринку електричної енергії',
@@ -102,7 +103,7 @@ export function DocumentsPage() {
       externalLink: 'https://zakon.rada.gov.ua/laws/show/2019-19#Text'
     },
     {
-      id: 6,
+      id: 9,
       category: 'legal',
       name: 'Закон України "Про захист економічної конкуренції"',
       description: 'Правові засади підтримки та захисту економічної конкуренції',
@@ -111,7 +112,7 @@ export function DocumentsPage() {
       externalLink: 'https://zakon.rada.gov.ua/laws/show/2210-14#Text'
     },
     {
-      id: 7,
+      id: 10,
       category: 'legal',
       name: 'Закон України "Про захист персональних даних"',
       description: 'Правові засади захисту персональних даних споживачів',
@@ -120,7 +121,7 @@ export function DocumentsPage() {
       externalLink: 'https://zakon.rada.gov.ua/laws/show/2297-17#Text'
     },
     {
-      id: 8,
+      id: 11,
       category: 'legal',
       name: 'Закон України "Про Національну комісію, що здійснює державне регулювання у сферах енергетики та комунальних послуг"',
       description: 'Визначає правовий статус, повноваження та функції НКРЕКП',
@@ -129,7 +130,7 @@ export function DocumentsPage() {
       externalLink: 'https://zakon.rada.gov.ua/laws/show/1540-19#Text'
     },
     {
-      id: 9,
+      id: 12,
       category: 'legal',
       name: 'Закон України "Про особливості доступу до інформації у сферах постачання електричної енергії, природного газу, теплопостачання, централізованого постачання гарячої води, централізованого питного водопостачання та водовідведення"',
       description: 'Регулює особливості доступу до інформації у сферах енергопостачання та комунальних послуг',
@@ -138,7 +139,7 @@ export function DocumentsPage() {
       externalLink: 'https://zakon.rada.gov.ua/laws/show/887-19#Text'
     },
     {
-      id: 10,
+      id: 13,
       category: 'legal',
       name: 'Постанова НКРЕКП № 307 від 14.03.2018 "Про затвердження Правил ринку"',
       description: 'Встановлює правила функціонування оптового ринку електричної енергії',
@@ -147,7 +148,7 @@ export function DocumentsPage() {
       externalLink: 'https://zakon.rada.gov.ua/laws/show/v0307874-18#Text'
     },
     {
-      id: 11,
+      id: 14,
       category: 'legal',
       name: 'Постанова НКРЕКП № 308 від 14.03.2018 "Про затвердження Правил ринку «на добу наперед» та внутрішньодобового ринку"',
       description: 'Регулює функціонування ринку електричної енергії на добу наперед та внутрішньодобового ринку',
@@ -156,7 +157,7 @@ export function DocumentsPage() {
       externalLink: 'https://zakon.rada.gov.ua/laws/show/v0308874-18#Text'
     },
     {
-      id: 12,
+      id: 15,
       category: 'legal',
       name: 'Постанова НКРЕКП № 309 від 14.03.2018 "Про затвердження Кодексу системи передачі"',
       description: 'Встановлює правила передачі електричної енергії магістральними електромережами',
@@ -165,7 +166,7 @@ export function DocumentsPage() {
       externalLink: 'https://zakon.rada.gov.ua/laws/show/v0309874-18#Text'
     },
     {
-      id: 13,
+      id: 16,
       category: 'legal',
       name: 'Постанова НКРЕКП № 310 від 14.03.2018 "Про затвердження Кодексу систем розподілу"',
       description: 'Встановлює правила розподілу електричної енергії та приєднання споживачів',
@@ -174,7 +175,7 @@ export function DocumentsPage() {
       externalLink: 'https://zakon.rada.gov.ua/laws/show/v0310874-18#Text'
     },
     {
-      id: 14,
+      id: 17,
       category: 'legal',
       name: 'Постанова НКРЕКП № 311 від 14.03.2018 "Про затвердження Кодексу комерційного обліку електричної енергії"',
       description: 'Регулює порядок комерційного обліку виробництва, передачі, розподілу та постачання електричної енергії',
@@ -183,7 +184,7 @@ export function DocumentsPage() {
       externalLink: 'https://zakon.rada.gov.ua/laws/show/v0311874-18#Text'
     },
     {
-      id: 15,
+      id: 18,
       category: 'legal',
       name: 'Постанова НКРЕКП № 312 від 14.03.2018 "Про затвердження Правил роздрібного ринку електричної енергії"',
       description: 'Встановлює правила функціонування роздрібного ринку електричної енергії',
@@ -192,7 +193,7 @@ export function DocumentsPage() {
       externalLink: 'https://zakon.rada.gov.ua/laws/show/v0312874-18#Text'
     },
     {
-      id: 16,
+      id: 19,
       category: 'legal',
       name: 'Постанова НКРЕКП № 375 від 12.06.2018 "Про порядок забезпечення стандартів якості електропостачання та надання компенсацій споживачам за їх недотримання"',
       description: 'Визначає стандарти якості електропостачання та порядок компенсацій споживачам',
@@ -201,7 +202,7 @@ export function DocumentsPage() {
       externalLink: 'https://zakon.rada.gov.ua/laws/show/v0375874-18#Text'
     },
     {
-      id: 17,
+      id: 20,
       category: 'legal',
       name: 'Постанова НКРЕКП № 1468 від 27.12.2017 "Про затвердження Ліцензійних умов провадження господарської діяльності з перепродажу електричної енергії (трейдерської діяльності)"',
       description: 'Встановлює вимоги для отримання та дії ліцензій на трейдерську діяльність',
@@ -210,7 +211,7 @@ export function DocumentsPage() {
       externalLink: 'https://zakon.rada.gov.ua/laws/show/v1468874-17#Text'
     },
     {
-      id: 18,
+      id: 21,
       category: 'legal',
       name: 'Постанова НКРЕКП № 1469 від 27.12.2017 "Про затвердження Ліцензійних умов провадження господарської діяльності з постачання електричної енергії споживачу"',
       description: 'Встановлює вимоги для отримання та дії ліцензій на постачання електроенергії споживачам',
@@ -219,7 +220,7 @@ export function DocumentsPage() {
       externalLink: 'https://zakon.rada.gov.ua/laws/show/v1469874-17#Text'
     },
     {
-      id: 19,
+      id: 22,
       category: 'contracts',
       name: 'Договір постачання електроенергії споживачу',
       description: 'Типова форма договору про постачання електричної енергії для непобутових споживачів',
@@ -231,7 +232,7 @@ export function DocumentsPage() {
       downloadLink: '/pdf/Договір на постачання електричної енергії.pdf'
     },
     {
-      id: 20,
+      id: 23,
       category: 'contracts',
       name: 'Додаток №1 "Заява-приєднання до умов договору про постачання електричної енергії споживачу ознайомитись та завантажити"',
       description: 'Заява споживача про приєднання до типових умов договору постачання електричної енергії',
@@ -243,7 +244,7 @@ export function DocumentsPage() {
       downloadLink: '/pdf/Заява приєднання до договору.pdf'
     },
     {
-      id: 21,
+      id: 24,
       category: 'contracts',
       name: 'Додаток №2 "Комерційна пропозиція до Договору про постачання електричної енергії споживачу"',
       description: 'Комерційна пропозиція з деталізацією тарифів та умов постачання електричної енергії',
@@ -255,7 +256,7 @@ export function DocumentsPage() {
       downloadLink: '/pdf/Публічна комерційна пропозиція 1.pdf'
     },
     {
-      id: 36,
+      id: 25,
       category: 'contracts',
       name: 'Додаток №2 "Комерційна пропозиція до Договору про постачання електричної енергії споживачу (варіант 2)"',
       description: 'Альтернативний варіант комерційної пропозиції з іншими умовами тарифікації',
@@ -267,7 +268,7 @@ export function DocumentsPage() {
       downloadLink: '/pdf/Публічна комерційна пропозиція 2.pdf'
     },
     {
-      id: 37,
+      id: 26,
       category: 'contracts',
       name: 'Додаток №3.1 "Договір купівлі - продажу електричної енергії за механізмом самовиробництва"',
       description: 'Договір для споживачів з власними джерелами виробництва електричної енергії',
@@ -279,7 +280,7 @@ export function DocumentsPage() {
       downloadLink: '/pdf/Договір_купівлі_продажу_електричної_енергії_за_механізмом_самовиробництва.pdf'
     },
     {
-      id: 38,
+      id: 27,
       category: 'contracts',
       name: 'Додаток №3.2 "Комерційна пропозиція до Договору про постачання електричної енергії споживачу(активний споживач)"',
       description: 'Комерційна пропозиція для активних споживачів, які виробляють та споживають електроенергію',
@@ -291,7 +292,7 @@ export function DocumentsPage() {
       downloadLink: '/pdf/Публічна комерційна пропозиція 3 Активний споживач.pdf'
     },
     {
-      id: 22,
+      id: 28,
       category: 'consumer-info',
       name: 'Інструкція зі зняття показань лічильника',
       description: 'Детальна інструкція для споживачів щодо правильного зняття показань',
@@ -299,11 +300,11 @@ export function DocumentsPage() {
       date: '10.01.2025',
       type: 'Інструкція',
       format: 'PDF',
-      viewLink: '/pdf/Zagalnyi_poryadok_znyattya_pokaziv.pdf',
-      downloadLink: '/pdf/Zagalnyi_poryadok_znyattya_pokaziv.pdf'
+      viewLink: '/pdf/Instrukciya_pokazniky_lichylnyka (2).pdf',
+      downloadLink: '/pdf/Instrukciya_pokazniky_lichylnyka (2).pdf'
     },
     {
-      id: 23,
+      id: 29,
       category: 'consumer-info',
       name: 'Правила безпечної експлуатації електроприладів',
       description: 'Рекомендації щодо безпечного використання електричних приладів',
@@ -311,11 +312,11 @@ export function DocumentsPage() {
       date: '10.01.2025',
       type: 'Інструкція',
       format: 'PDF',
-      viewLink: '/pdf/Perevagi-efektivnogo-kincevogo-vikoristannya-energii-spozhivachami-ta-poradi-shhodo-pidvishhennya-energoefektivnosti.pdf',
-      downloadLink: '/pdf/Perevagi-efektivnogo-kincevogo-vikoristannya-energii-spozhivachami-ta-poradi-shhodo-pidvishhennya-energoefektivnosti.pdf'
+      viewLink: '/pdf/Pravyla_bezpechnoi_ekspluataciyi_elektropryladiv.pdf',
+      downloadLink: '/pdf/Pravyla_bezpechnoi_ekspluataciyi_elektropryladiv.pdf'
     },
     {
-      id: 24,
+      id: 30,
       category: 'consumer-info',
       name: 'Порядок подання показань лічильника',
       description: 'Способи та терміни передачі показань електролічильників',
@@ -323,11 +324,11 @@ export function DocumentsPage() {
       date: '10.01.2025',
       type: 'Інформаційний матеріал',
       format: 'PDF',
-      viewLink: '/pdf/Zagalnyi_poryadok_znyattya_pokaziv.pdf',
-      downloadLink: '/pdf/Zagalnyi_poryadok_znyattya_pokaziv.pdf'
+      viewLink: '/pdf/Poriadok_podannia_pokazan_lichylnyka.pdf',
+      downloadLink: '/pdf/Poriadok_podannia_pokazan_lichylnyka.pdf'
     },
     {
-      id: 25,
+      id: 31,
       category: 'consumer-info',
       name: 'Поради щодо економії електроенергії',
       description: 'Практичні рекомендації для зменшення споживання електричної енергії',
@@ -335,11 +336,11 @@ export function DocumentsPage() {
       date: '10.01.2025',
       type: 'Інформаційний матеріал',
       format: 'PDF',
-      viewLink: '/pdf/Perevagi-efektivnogo-kincevogo-vikoristannya-energii-spozhivachami-ta-poradi-shhodo-pidvishhennya-energoefektivnosti.pdf',
-      downloadLink: '/pdf/Perevagi-efektivnogo-kincevogo-vikoristannya-energii-spozhivachami-ta-poradi-shhodo-pidvishhennya-energoefektivnosti.pdf'
+      viewLink: '/pdf/Porady_shchodo_ekonomiyi_elektroenergiyi.pdf',
+      downloadLink: '/pdf/Porady_shchodo_ekonomiyi_elektroenergiyi.pdf'
     },
     {
-      id: 73,
+      id: 32,
       category: 'consumer-info',
       name: 'Контактні дані для подання повідомлень про загрозу електробезпеці, контактні дані операторів системи, інформаційно-консультаційних центрів та кол-центрів учасників роздрібного ринку',
       description: 'Повний перелік контактів служб безпеки та підтримки споживачів на ринку електроенергії',
@@ -347,11 +348,11 @@ export function DocumentsPage() {
       date: '10.01.2025',
       type: 'Довідник',
       format: 'PDF',
-      viewLink: '/pdf/Perevagi-efektivnogo-kincevogo-vikoristannya-energii-spozhivachami-ta-poradi-shhodo-pidvishhennya-energoefektivnosti.pdf',
-      downloadLink: '/pdf/Perevagi-efektivnogo-kincevogo-vikoristannya-energii-spozhivachami-ta-poradi-shhodo-pidvishhennya-energoefektivnosti.pdf'
+      viewLink: '/pdf/REIeSTR-OSR.pdf',
+      downloadLink: '/pdf/REIeSTR-OSR.pdf'
     },
     {
-      id: 74,
+      id: 33,
       category: 'consumer-info',
       name: 'Порядок забезпечення стандартів якості Електропостачання та компенсації за їх невиконання',
       description: 'Детальний опис стандартів якості послуг та механізму отримання компенсацій',
@@ -363,7 +364,7 @@ export function DocumentsPage() {
       downloadLink: '/pdf/Poryadok-zabezpechennya-standartiv-yakosti-Elektropostachannya-ta-kompensacii-za-ih-nevikonannya_compressed.pdf'
     },
     {
-      id: 75,
+      id: 34,
       category: 'consumer-info',
       name: 'Посилання на веб-сторінки регулятора та операторів системи',
       description: 'Корисні посилання на офіційні сайти НКРЕКП, операторів та інших учасників ринку',
@@ -375,7 +376,7 @@ export function DocumentsPage() {
       downloadLink: '/pdf/Posilannya-na-veb-storinki-regulyatora-ta-operatoriv-sistemi.pdf'
     },
     {
-      id: 76,
+      id: 35,
       category: 'consumer-info',
       name: 'Права споживачів передбачені законодавством',
       description: 'Повний перелік прав споживачів електричної енергії згідно з чинним законодавством',
@@ -387,7 +388,7 @@ export function DocumentsPage() {
       downloadLink: '/pdf/Prava-spozhivachiv-peredbacheni-zakonodavstvom.pdf'
     },
     {
-      id: 77,
+      id: 36,
       category: 'consumer-info',
       name: 'Відключення та відновлення електроживлення',
       description: 'Порядок планових та аварійних відключень, процедура відновлення електропостачання',
@@ -399,19 +400,17 @@ export function DocumentsPage() {
       downloadLink: '/pdf/Vidkljuchennya-ta-vidnovlennya-elektrozhivlennya.pdf'
     },
     {
-      id: 78,
+      id: 37,
       category: 'consumer-info',
       name: 'Інформація щодо дотримання загальних та гарантованих стандартів якості надання послуг електропостачальника та сум наданих компенсацій за недотримання гарантованих стандартів якості надання послуг',
       description: 'Публічна інформація про дотримання компанією стандартів якості та виплачені компенсації',
       size: '3.1 MB',
       date: '10.01.2025',
       type: 'Інформаційний матеріал',
-      format: 'PDF',
-      viewLink: '/pdf/Vidkljuchennya-ta-vidnovlennya-elektrozhivlennya.pdf',
-      downloadLink: '/pdf/Vidkljuchennya-ta-vidnovlennya-elektrozhivlennya.pdf'
+      externalLink: 'https://www.nerc.gov.ua/sferi-diyalnosti/elektroenergiya/yakist-elektropostachannya/standarti-yakosti-elektropostachannya-ta-nadannya-kompensacij'
     },
     {
-      id: 79,
+      id: 38,
       category: 'consumer-info',
       name: 'Інформація щодо порядку укладення та приєднання споживача до договору про постачання електричної енергії',
       description: 'Покрокова інструкція для нових споживачів щодо укладення договору електропостачання',
@@ -419,11 +418,11 @@ export function DocumentsPage() {
       date: '10.01.2025',
       type: 'Інструкція',
       format: 'PDF',
-      viewLink: '/pdf/Poryadok-ukladannya-dogovriv-pro-postachannya-elektrychnoyi-energiyi-spozhyvachu-za-vilnymy-tsinamy.pdf',
-      downloadLink: '/pdf/Poryadok-ukladannya-dogovriv-pro-postachannya-elektrychnoyi-energiyi-spozhyvachu-za-vilnymy-tsinamy.pdf'
+      viewLink: '/pdf/Informaciya_pro_poriadok_ukladennia_dogovoru_postachannya.pdf',
+      downloadLink: '/pdf/Informaciya_pro_poriadok_ukladennia_dogovoru_postachannya.pdf'
     },
     {
-      id: 80,
+      id: 39,
       category: 'consumer-info',
       name: 'Загальні умови електропостачання',
       description: 'Базові правила та умови надання послуг електропостачання для всіх категорій споживачів',
@@ -435,7 +434,7 @@ export function DocumentsPage() {
       downloadLink: '/pdf/Zagalni-umovi-elektropostachannya.pdf'
     },
     {
-      id: 81,
+      id: 40,
       category: 'consumer-info',
       name: 'Переваги ефективного кінцевого використання енергії споживачами та поради щодо підвищення енергоефективності при споживанні електроенергії',
       description: 'Рекомендації з енергоефективності та економії електроенергії для різних типів споживачів',
@@ -447,7 +446,7 @@ export function DocumentsPage() {
       downloadLink: '/pdf/Perevagi-efektivnogo-kincevogo-vikoristannya-energii-spozhivachami-ta-poradi-shhodo-pidvishhennya-energoefektivnosti.pdf'
     },
     {
-      id: 82,
+      id: 41,
       category: 'consumer-info',
       name: 'Порядок укладання договорів про постачання електричної енергії споживачу за «вільними цінами»',
       description: 'Особливості укладення договорів за вільними (ринковими) цінами на електроенергію',
@@ -459,7 +458,7 @@ export function DocumentsPage() {
       downloadLink: '/pdf/Poryadok-ukladannya-dogovriv-pro-postachannya-elektrychnoyi-energiyi-spozhyvachu-za-vilnymy-tsinamy.pdf'
     },
     {
-      id: 83,
+      id: 42,
       category: 'consumer-info',
       name: 'Інформація щодо порядку подання споживачами звернень, скарг, претензій, надання повідомлень про загрозу електробезпеці та їх розгляду',
       description: 'Детальна процедура подання та розгляду звернень, скарг та повідомлень про аварійні ситуації',
@@ -471,7 +470,7 @@ export function DocumentsPage() {
       downloadLink: '/pdf/Procedura_rozghliadu_skarh_spozhyvachiv.pdf'
     },
     {
-      id: 84,
+      id: 43,
       category: 'consumer-info',
       name: 'Загальний порядок зняття показів засобів вимірювання та оплати спожитої електричної енергії',
       description: 'Правила зняття показань лічильників та порядок розрахунків за електроенергію',
@@ -483,7 +482,7 @@ export function DocumentsPage() {
       downloadLink: '/pdf/Zagalnyi_poryadok_znyattya_pokaziv.pdf'
     },
     {
-      id: 85,
+      id: 44,
       category: 'consumer-info',
       name: 'Порядок зміни електропостачальника за ініціативою споживача',
       description: 'Покрокова інструкція для споживачів, які бажають змінити постачальника електроенергії',
@@ -495,7 +494,7 @@ export function DocumentsPage() {
       downloadLink: '/pdf/Poryadok-zmini-elektropostachalnika-za-iniciativoju-spozhivacha.pdf'
     },
     {
-      id: 86,
+      id: 45,
       category: 'consumer-info',
       name: 'Порядок роботи та контактні дані інформаційно-консультаційного центру',
       description: 'Графік роботи, контакти та перелік послуг інформаційно-консультаційного центру компанії',
@@ -507,7 +506,7 @@ export function DocumentsPage() {
       downloadLink: '/pdf/Poryadok-roboti-kontakt.pdf'
     },
     {
-      id: 87,
+      id: 46,
       category: 'consumer-info',
       name: 'Перелiк послуг інформаційного відділу ТОВ ЕНЕРГОЗАХІД',
       description: 'Повний каталог послуг та консультацій, які надає інформаційний відділ компанії',
@@ -515,11 +514,11 @@ export function DocumentsPage() {
       date: '10.01.2025',
       type: 'Довідник',
       format: 'PDF',
-      viewLink: '/pdf/Poryadok-roboti-kontakt.pdf',
-      downloadLink: '/pdf/Poryadok-roboti-kontakt.pdf'
+      viewLink: '/pdf/Perelik_poslug_info_viddilu.pdf',
+      downloadLink: '/pdf/Perelik_poslug_info_viddilu.pdf'
     },
     {
-      id: 26,
+      id: 47,
       category: 'complaints',
       name: 'Форма скарги/звернення споживача',
       description: 'Типова форма для подання скарги або звернення від споживача',
@@ -531,7 +530,7 @@ export function DocumentsPage() {
       downloadLink: '/pdf/Dodatok-1-Zrazok-zvernennya_KEM-2.pdf'
     },
     {
-      id: 27,
+      id: 48,
       category: 'complaints',
       name: 'Регламент розгляду скарг споживачів',
       description: 'Порядок та терміни розгляду звернень та скарг споживачів',
@@ -543,7 +542,7 @@ export function DocumentsPage() {
       downloadLink: '/pdf/Procedura_rozghliadu_skarh_spozhyvachiv.pdf'
     },
     {
-      id: 28,
+      id: 49,
       category: 'energy-sources',
       name: 'Частки джерел електроенергії за 2019 рік',
       description: 'Інформація про структуру та частки джерел виробництва електроенергії компанії у 2019 році',
@@ -555,7 +554,7 @@ export function DocumentsPage() {
       downloadLink: '/pdf/Dzherela-EE-za-2019r.-EZ.pdf'
     },
     {
-      id: 29,
+      id: 50,
       category: 'energy-sources',
       name: 'Частки джерел електроенергії за 2020 рік',
       description: 'Інформація про структуру та частки джерел виробництва електроенергії компанії у 2020 році',
@@ -567,7 +566,7 @@ export function DocumentsPage() {
       downloadLink: '/pdf/Dzherela-EE-za-2020r.-EZ.pdf'
     },
     {
-      id: 39,
+      id: 51,
       category: 'energy-sources',
       name: 'Частки джерел електроенергії за 2021 рік',
       description: 'Інформація про структуру та частки джерел виробництва електроенергії компанії у 2021 році',
@@ -579,7 +578,7 @@ export function DocumentsPage() {
       downloadLink: '/pdf/Dzherela-EE-za-2021r.-EZ.pdf'
     },
     {
-      id: 40,
+      id: 52,
       category: 'energy-sources',
       name: 'Частки джерел електроенергії за 2022 рік',
       description: 'Інформація про структуру та частки джерел виробництва електроенергії компанії у 2022 році',
@@ -591,7 +590,7 @@ export function DocumentsPage() {
       downloadLink: '/pdf/Dzherela-EE-za-2022r.-EZ.pdf'
     },
     {
-      id: 41,
+      id: 53,
       category: 'energy-sources',
       name: 'Частки джерел електроенергії за 2023 рік',
       description: 'Інформація про структуру та частки джерел виробництва електроенергії компанії у 2023 році',
@@ -603,7 +602,7 @@ export function DocumentsPage() {
       downloadLink: '/pdf/Dzherela-EE-za-2023r.-EZ.pdf'
     },
     {
-      id: 42,
+      id: 54,
       category: 'energy-sources',
       name: 'Частки джерел електроенергії за 2024 рік',
       description: 'Інформація про структуру та частки джерел виробництва електроенергії компанії у 2024 році',
@@ -615,7 +614,7 @@ export function DocumentsPage() {
       downloadLink: '/pdf/Dzherela-EE-za-2024r.-EZ.pdf'
     },
     {
-      id: 43,
+      id: 55,
       category: 'energy-sources',
       name: 'Частки джерел електроенергії по місяцях за 2019 рік',
       description: 'Детальна помісячна статистика структури джерел виробництва електроенергії за 2019 рік',
@@ -627,7 +626,7 @@ export function DocumentsPage() {
       downloadLink: '/pdf/Chastki_dzherel_pomisyachno_za_2019_rik.pdf'
     },
     {
-      id: 44,
+      id: 56,
       category: 'energy-sources',
       name: 'Частки джерел електроенергії по місяцях за 2020 рік',
       description: 'Детальна помісячна статистика структури джерел виробництва електроенергії за 2020 рік',
@@ -635,11 +634,11 @@ export function DocumentsPage() {
       date: '01.01.2025',
       type: 'Статистичний звіт',
       format: 'PDF',
-      viewLink: '/pdf/Chastki_dzherel_pomisyachno_za_2020_rik.pdf',
-      downloadLink: '/pdf/Chastki_dzherel_pomisyachno_za_2020_rik.pdf'
+      viewLink: '/pdf/Chastki_dzherel_pomisyachno_za_2020_rik (1).pdf',
+      downloadLink: '/pdf/Chastki_dzherel_pomisyachno_za_2020_rik (1).pdf'
     },
     {
-      id: 45,
+      id: 57,
       category: 'energy-sources',
       name: 'Частки джерел електроенергії по місяцях за 2021 рік',
       description: 'Детальна помісячна статистика структури джерел виробництва електроенергії за 2021 рік',
@@ -651,7 +650,7 @@ export function DocumentsPage() {
       downloadLink: '/pdf/Chastki_dzherel_pomisyachno_za_2021_rik.pdf'
     },
     {
-      id: 46,
+      id: 58,
       category: 'energy-sources',
       name: 'Частки джерел електроенергії по місяцях за 2022 рік',
       description: 'Детальна помісячна статистика структури джерел виробництва електроенергії за 2022 рік',
@@ -663,7 +662,7 @@ export function DocumentsPage() {
       downloadLink: '/pdf/Chastki_dzherel_pomisyachno_za_2022_rik.pdf'
     },
     {
-      id: 47,
+      id: 59,
       category: 'energy-sources',
       name: 'Частки джерел електроенергії по місяцях за 2023 рік',
       description: 'Детальна помісячна статистика структури джерел виробництва електроенергії за 2023 рік',
@@ -675,7 +674,7 @@ export function DocumentsPage() {
       downloadLink: '/pdf/Chastki_dzherel_pomisyachno_za_2023_rik.pdf'
     },
     {
-      id: 48,
+      id: 60,
       category: 'energy-sources',
       name: 'Частки джерел електроенергії по місяцях за 2024 рік',
       description: 'Детальна помісячна статистика структури джерел виробництва електроенергії за 2024 рік',
@@ -687,7 +686,7 @@ export function DocumentsPage() {
       downloadLink: '/pdf/Chastki_dzherel_pomisyachno_za_2024_rik.pdf'
     },
     {
-      id: 49,
+      id: 61,
       category: 'energy-sources',
       name: 'Інформація про вплив на довкілля, спричинений виробництвом електричної енергії усіма джерелами енергії',
       description: 'Комплексний аналіз екологічного впливу різних джерел виробництва електроенергії',
@@ -696,7 +695,7 @@ export function DocumentsPage() {
       externalLink: 'https://necu.org.ua/energy/'
     },
     {
-      id: 50,
+      id: 62,
       category: 'energy-sources',
       name: 'ВІДНОВЛЮВАЛЬНА ЕНЕРГЕТИКА ТА ВПЛИВ НА НАВКОЛИШНЄ СЕРЕДОВИЩЕ',
       description: 'Дослідження використання відновлюваних джерел енергії та їх екологічних переваг',
@@ -705,7 +704,7 @@ export function DocumentsPage() {
       externalLink: 'https://www.gpee.com.ua/news_item/727'
     },
     {
-      id: 51,
+      id: 63,
       category: 'energy-sources',
       name: 'Вплив на довкілля при виробництві електроенергії',
       description: 'Оцінка екологічних наслідків виробництва електричної енергії різними методами',
@@ -714,7 +713,7 @@ export function DocumentsPage() {
       externalLink: 'https://energo.km.ua/page/vpliv-na-dovkillja-pri-virobnitstvi-elektroenergiji'
     },
     {
-      id: 30,
+      id: 64,
       category: 'reports',
       name: 'Звіт щодо розгляду звернень, скарг, претензій',
       description: 'Підсумкові звіти про розгляд звернень та скарг споживачів компанії',
@@ -726,7 +725,7 @@ export function DocumentsPage() {
       downloadLink: '/pdf/Richnij-zvit-shhodo-rozglyadu-zvernen.pdf'
     },
     {
-      id: 31,
+      id: 65,
       category: 'reports',
       name: 'Звіт щодо дотримання загальних та гарантованих стандартів якості надання послуг електропостачальника та сум наданих компенсацій за недотримання гарантованих стандартів якості надання послуг за 2018 рік',
       description: 'Детальний звіт про якість послуг електропостачання та компенсації споживачам за 2018 рік',
@@ -738,7 +737,7 @@ export function DocumentsPage() {
       downloadLink: '/pdf/Dodatok-8_2018_EZ.pdf'
     },
     {
-      id: 52,
+      id: 66,
       category: 'reports',
       name: 'Звіт щодо дотримання загальних та гарантованих стандартів якості надання послуг електропостачальника та сум наданих компенсацій за недотримання гарантованих стандартів якості надання послуг за 2019 рік',
       description: 'Детальний звіт про якість послуг електропостачання та компенсації споживачам за 2019 рік',
@@ -750,7 +749,7 @@ export function DocumentsPage() {
       downloadLink: '/pdf/Dodatok-8_2019_EZ.pdf'
     },
     {
-      id: 53,
+      id: 67,
       category: 'reports',
       name: 'Звіт щодо дотримання загальних та гарантованих стандартів якості надання послуг електропостачальника та сум наданих компенсацій за недотримання гарантованих стандартів якості надання послуг за 2020 рік',
       description: 'Детальний звіт про якість послуг електропостачання та компенсації споживачам за 2020 рік',
@@ -762,7 +761,7 @@ export function DocumentsPage() {
       downloadLink: '/pdf/Dodatok-8_2020_EZ.pdf'
     },
     {
-      id: 54,
+      id: 68,
       category: 'reports',
       name: 'Звіт щодо дотримання загальних та гарантованих стандартів якості надання послуг електропостачальника та сум наданих компенсацій за недотримання гарантованих стандартів якості надання послуг за 2021 рік',
       description: 'Детальний звіт про якість послуг електропостачання та компенсації споживачам за 2021 рік',
@@ -774,7 +773,7 @@ export function DocumentsPage() {
       downloadLink: '/pdf/Dodatok-8_2021_EZ.pdf'
     },
     {
-      id: 55,
+      id: 69,
       category: 'reports',
       name: 'Звіт щодо дотримання загальних та гарантованих стандартів якості надання послуг електропостачальника та сум наданих компенсацій за недотримання гарантованих стандартів якості надання послуг за 2022 рік',
       description: 'Детальний звіт про якість послуг електропостачання та компенсації споживачам за 2022 рік',
@@ -786,7 +785,7 @@ export function DocumentsPage() {
       downloadLink: '/pdf/Dodatok-8_2022_EZ.pdf'
     },
     {
-      id: 56,
+      id: 70,
       category: 'reports',
       name: 'Звіт щодо дотримання загальних та гарантованих стандартів якості надання послуг електропостачальника та сум наданих компенсацій за недотримання гарантованих стандартів якості надання послуг за 2023 рік',
       description: 'Детальний звіт про якість послуг електропостачання та компенсації споживачам за 2023 рік',
@@ -798,7 +797,19 @@ export function DocumentsPage() {
       downloadLink: '/pdf/Dodatok-8_2023_EZ.pdf'
     },
     {
-      id: 57,
+      id: 71,
+      category: 'reports',
+      name: 'Звіт щодо дотримання загальних та гарантованих стандартів якості надання послуг електропостачальника та сум наданих компенсацій за недотримання гарантованих стандартів якості надання послуг за 2024 рік',
+      description: 'Детальний звіт про якість послуг електропостачання та компенсації споживачам за 2024 рік',
+      size: '4.8 MB',
+      date: '31.12.2024',
+      type: 'Звіт',
+      format: 'PDF',
+      viewLink: '/pdf/Dodatok-8_2024_EZ.pdf',
+      downloadLink: '/pdf/Dodatok-8_2024_EZ.pdf'
+    },
+    {
+      id: 72,
       category: 'reports',
       name: 'Річна звітність 2018',
       description: 'Консолідована річна фінансова та операційна звітність компанії за 2018 рік',
@@ -810,7 +821,7 @@ export function DocumentsPage() {
       downloadLink: '/pdf/FinZvit-EZ-2019-01-01.pdf'
     },
     {
-      id: 58,
+      id: 73,
       category: 'reports',
       name: 'Річна звітність 2019',
       description: 'Консолідована річна фінансова та операційна звітність компанії за 2019 рік',
@@ -822,7 +833,7 @@ export function DocumentsPage() {
       downloadLink: '/pdf/FinZvit-EZ-2020-01-01.pdf'
     },
     {
-      id: 59,
+      id: 74,
       category: 'reports',
       name: 'Річна звітність 2020',
       description: 'Консолідована річна фінансова та операційна звітність компанії за 2020 рік',
@@ -834,7 +845,7 @@ export function DocumentsPage() {
       downloadLink: '/pdf/FinZvit-EZ-2021-01-01.pdf'
     },
     {
-      id: 60,
+      id: 75,
       category: 'reports',
       name: 'Річна звітність 2021',
       description: 'Консолідована річна фінансова та операційна звітність компанії за 2021 рік',
@@ -846,7 +857,7 @@ export function DocumentsPage() {
       downloadLink: '/pdf/FinZvit-EZ-2022-01-01.pdf'
     },
     {
-      id: 61,
+      id: 76,
       category: 'reports',
       name: 'Річна звітність 2022',
       description: 'Консолідована річна фінансова та операційна звітність компанії за 2022 рік',
@@ -858,7 +869,7 @@ export function DocumentsPage() {
       downloadLink: '/pdf/FinZvit-EZ-2023-01-01.pdf'
     },
     {
-      id: 62,
+      id: 77,
       category: 'reports',
       name: 'Річна звітність 2023',
       description: 'Консолідована річна фінансова та операційна звітність компанії за 2023 рік',
@@ -870,7 +881,19 @@ export function DocumentsPage() {
       downloadLink: '/pdf/FinZvit-EZ-2024-01-01.pdf'
     },
     {
-      id: 63,
+      id: 78,
+      category: 'reports',
+      name: 'Річна звітність 2024',
+      description: 'Консолідована річна фінансова та операційна звітність компанії за 2024 рік',
+      size: '6.7 MB',
+      date: '31.03.2025',
+      type: 'Фінансовий звіт',
+      format: 'PDF',
+      viewLink: '/pdf/FinZvit-EZ-2025-01-01.pdf',
+      downloadLink: '/pdf/FinZvit-EZ-2025-01-01.pdf'
+    },
+    {
+      id: 79,
       category: 'reports',
       name: 'Звіт незалежного аудитора',
       description: 'Аудиторський висновок незалежної аудиторської компанії щодо фінансової звітності',
@@ -882,7 +905,7 @@ export function DocumentsPage() {
       downloadLink: '/pdf/2024_Звіт аудитора Енергозахід full.pdf'
     },
     {
-      id: 64,
+      id: 80,
       category: 'reports',
       name: 'Звітність про звернення та скарги споживачів електропостачальника 2019 рік',
       description: 'Статистика та аналіз звернень і скарг споживачів за 2019 рік',
@@ -890,11 +913,11 @@ export function DocumentsPage() {
       date: '31.12.2019',
       type: 'Звіт',
       format: 'PDF',
-      viewLink: '/pdf/232110446_11S_19.pdf',
-      downloadLink: '/pdf/232110446_11S_19.pdf'
+      viewLink: '/pdf/32110446_11S_19.pdf',
+      downloadLink: '/pdf/32110446_11S_19.pdf'
     },
     {
-      id: 65,
+      id: 81,
       category: 'reports',
       name: 'Звітність про звернення та скарги споживачів електропостачальника 2020 рік',
       description: 'Статистика та аналіз звернень і скарг споживачів за 2020 рік',
@@ -902,11 +925,11 @@ export function DocumentsPage() {
       date: '31.12.2020',
       type: 'Звіт',
       format: 'PDF',
-      viewLink: '/pdf/232110446_11S_20.pdf',
-      downloadLink: '/pdf/232110446_11S_20.pdf'
+      viewLink: '/pdf/32110446_11S_20.pdf',
+      downloadLink: '/pdf/32110446_11S_20.pdf'
     },
     {
-      id: 66,
+      id: 82,
       category: 'reports',
       name: 'Звітність про звернення та скарги споживачів електропостачальника 2021 рік',
       description: 'Статистика та аналіз звернень і скарг споживачів за 2021 рік',
@@ -914,11 +937,11 @@ export function DocumentsPage() {
       date: '31.12.2021',
       type: 'Звіт',
       format: 'PDF',
-      viewLink: '/pdf/232110446_11S_21.pdf',
-      downloadLink: '/pdf/232110446_11S_21.pdf'
+      viewLink: '/pdf/32110446_11S_21.pdf',
+      downloadLink: '/pdf/32110446_11S_21.pdf'
     },
     {
-      id: 67,
+      id: 83,
       category: 'reports',
       name: 'Звітність про звернення та скарги споживачів електропостачальника 2022 рік',
       description: 'Статистика та аналіз звернень і скарг споживачів за 2022 рік',
@@ -926,11 +949,11 @@ export function DocumentsPage() {
       date: '31.12.2022',
       type: 'Звіт',
       format: 'PDF',
-      viewLink: '/pdf/232110446_11S_22.pdf',
-      downloadLink: '/pdf/232110446_11S_22.pdf'
+      viewLink: '/pdf/32110446_11S_22.pdf',
+      downloadLink: '/pdf/32110446_11S_22.pdf'
     },
     {
-      id: 68,
+      id: 84,
       category: 'reports',
       name: 'Звітність про звернення та скарги споживачів електропостачальника 2023 рік',
       description: 'Статистика та аналіз звернень і скарг споживачів за 2023 рік',
@@ -938,11 +961,23 @@ export function DocumentsPage() {
       date: '31.12.2023',
       type: 'Звіт',
       format: 'PDF',
-      viewLink: '/pdf/232110446_11S_23.pdf',
-      downloadLink: '/pdf/232110446_11S_23.pdf'
+      viewLink: '/pdf/32110446_11S_23.pdf',
+      downloadLink: '/pdf/32110446_11S_23.pdf'
     },
     {
-      id: 69,
+      id: 85,
+      category: 'reports',
+      name: 'Звітність про звернення та скарги споживачів електропостачальника 2024 рік',
+      description: 'Статистика та аналіз звернень і скарг споживачів за 2024 рік',
+      size: '3.2 MB',
+      date: '31.12.2024',
+      type: 'Звіт',
+      format: 'PDF',
+      viewLink: '/pdf/32110446_11S_24.pdf',
+      downloadLink: '/pdf/32110446_11S_24.pdf'
+    },
+    {
+      id: 86,
       category: 'reports',
       name: 'Звіти щодо показників якості послуг з постачання електричної енергії 2021',
       description: 'Показники якості електропостачання та дотримання стандартів обслуговування за 2021 рік',
@@ -954,7 +989,7 @@ export function DocumentsPage() {
       downloadLink: '/pdf/Zvitnist-2021.pdf'
     },
     {
-      id: 70,
+      id: 87,
       category: 'reports',
       name: 'Звіти щодо показників якості послуг з постачання електричної енергії 2022',
       description: 'Показники якості електропостачання та дотримання стандартів обслуговування за 2022 рік',
@@ -966,7 +1001,7 @@ export function DocumentsPage() {
       downloadLink: '/pdf/Zvitnist-2022.pdf'
     },
     {
-      id: 71,
+      id: 88,
       category: 'reports',
       name: 'Звіти щодо показників якості послуг з постачання електричної енергії 2023',
       description: 'Показники якості електропостачання та дотримання стандартів обслуговування за 2023 рік',
@@ -978,7 +1013,7 @@ export function DocumentsPage() {
       downloadLink: '/pdf/Zvitnist-2023.pdf'
     },
     {
-      id: 72,
+      id: 89,
       category: 'reports',
       name: 'Звіти щодо показників якості послуг з постачання електричної енергії 2024',
       description: 'Показники якості електропостачання та дотримання стандартів обслуговування за 2024 рік',

@@ -31,6 +31,7 @@ export function ConsultationModal({ trigger }: ConsultationModalProps) {
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [isSubmitted, setIsSubmitted] = useState(false);
   const [isOpen, setIsOpen] = useState(false);
+  const [ticketId, setTicketId] = useState<string | null>(null);
 
   const handleInputChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
     const { name, value } = e.target;
@@ -57,29 +58,65 @@ export function ConsultationModal({ trigger }: ConsultationModalProps) {
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     setIsSubmitting(true);
-    
-    // Simulate form submission
-    await new Promise(resolve => setTimeout(resolve, 2000));
-    
-    setIsSubmitting(false);
-    setIsSubmitted(true);
-    
-    // Reset form after success
-    setTimeout(() => {
-      setIsSubmitted(false);
-      setIsOpen(false);
-      setFormData({
-        name: '',
-        phone: '',
-        email: '',
-        company: '',
-        consultationType: '',
-        preferredDate: undefined,
-        preferredTime: '',
-        topic: '',
-        description: ''
+
+    try {
+      const response = await fetch('https://formspree.io/f/xreznyng', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+          Accept: 'application/json'
+        },
+        body: JSON.stringify({
+          formType: 'consultation_request',
+          name: formData.name,
+          phone: formData.phone,
+          email: formData.email,
+          company: formData.company,
+          consultationType: formData.consultationType,
+          preferredDate: formData.preferredDate
+            ? formData.preferredDate.toISOString()
+            : null,
+          preferredTime: formData.preferredTime,
+          topic: formData.topic,
+          description: formData.description
+        })
       });
-    }, 4000);
+
+      if (!response.ok) {
+        console.error('Помилка при бронюванні консультації:', await response.text());
+        alert('Сталася помилка при надсиланні форми. Спробуйте, будь ласка, пізніше.');
+        setIsSubmitting(false);
+        return;
+      }
+
+      const newTicketId = Math.random().toString(36).substr(2, 9).toUpperCase();
+      setTicketId(newTicketId);
+
+      setIsSubmitting(false);
+      setIsSubmitted(true);
+
+      // Скидаємо форму та закриваємо модалку через 4 секунди
+      setTimeout(() => {
+        setIsSubmitted(false);
+        setIsOpen(false);
+        setFormData({
+          name: '',
+          phone: '',
+          email: '',
+          company: '',
+          consultationType: '',
+          preferredDate: undefined,
+          preferredTime: '',
+          topic: '',
+          description: ''
+        });
+        setTicketId(null);
+      }, 4000);
+    } catch (error) {
+      console.error('Помилка мережі при бронюванні консультації:', error);
+      alert('Не вдалося відправити форму. Перевірте інтернет і спробуйте ще раз.');
+      setIsSubmitting(false);
+    }
   };
 
   const consultationTypes = [
@@ -101,9 +138,14 @@ export function ConsultationModal({ trigger }: ConsultationModalProps) {
     { value: 'other', label: 'Інші питання' }
   ];
 
-  const isFormValid = formData.name && formData.phone && formData.email && 
-                     formData.consultationType && formData.preferredDate && 
-                     formData.preferredTime && formData.topic;
+  const isFormValid =
+    formData.name &&
+    formData.phone &&
+    formData.email &&
+    formData.consultationType &&
+    formData.preferredDate &&
+    formData.preferredTime &&
+    formData.topic;
 
   return (
     <Dialog open={isOpen} onOpenChange={setIsOpen}>
@@ -112,7 +154,10 @@ export function ConsultationModal({ trigger }: ConsultationModalProps) {
       </DialogTrigger>
       <DialogContent className="max-w-3xl max-h-[90vh] overflow-y-auto">
         <DialogHeader>
-          <DialogTitle className="flex items-center space-x-2 text-2xl" style={{ color: 'var(--energy-blue)' }}>
+          <DialogTitle
+            className="flex items-center space-x-2 text-2xl"
+            style={{ color: 'var(--energy-blue)' }}
+          >
             <Users className="w-6 h-6" />
             <span>Замовити консультацію</span>
           </DialogTitle>
@@ -128,11 +173,19 @@ export function ConsultationModal({ trigger }: ConsultationModalProps) {
               animate={{ opacity: 1, scale: 1 }}
               className="text-center py-8"
             >
-              <div className="w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4" 
-                   style={{ backgroundColor: 'var(--energy-yellow)' }}>
-                <CheckCircle className="w-8 h-8" style={{ color: 'var(--energy-blue)' }} />
+              <div
+                className="w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4"
+                style={{ backgroundColor: 'var(--energy-yellow)' }}
+              >
+                <CheckCircle
+                  className="w-8 h-8"
+                  style={{ color: 'var(--energy-blue)' }}
+                />
               </div>
-              <h4 className="text-xl font-semibold mb-2" style={{ color: 'var(--energy-blue)' }}>
+              <h4
+                className="text-xl font-semibold mb-2"
+                style={{ color: 'var(--energy-blue)' }}
+              >
                 Консультацію заброньовано!
               </h4>
               <p className="text-gray-600 mb-4">
@@ -141,11 +194,18 @@ export function ConsultationModal({ trigger }: ConsultationModalProps) {
               </p>
               <div className="bg-gray-50 rounded-lg p-4 text-sm">
                 <p className="font-medium mb-2">Деталі вашого бронювання:</p>
-                <p>📅 {formData.preferredDate && format(formData.preferredDate, 'dd MMMM yyyy', { locale: uk })}</p>
+                <p>
+                  📅{' '}
+                  {formData.preferredDate &&
+                    format(formData.preferredDate, 'dd MMMM yyyy', { locale: uk })}
+                </p>
                 <p>🕐 {formData.preferredTime}</p>
-                <p>📞 Тип: {consultationTypes.find(t => t.value === formData.consultationType)?.label}</p>
+                <p>
+                  📞 Тип:{' '}
+                  {consultationTypes.find(t => t.value === formData.consultationType)?.label}
+                </p>
                 <p className="mt-2 text-xs text-gray-500">
-                  Номер бронювання: #{Math.random().toString(36).substr(2, 9).toUpperCase()}
+                  Номер бронювання: #{ticketId || '—'}
                 </p>
               </div>
             </motion.div>
@@ -153,7 +213,10 @@ export function ConsultationModal({ trigger }: ConsultationModalProps) {
             <form onSubmit={handleSubmit} className="space-y-6">
               {/* Personal Information */}
               <div className="bg-blue-50 rounded-lg p-4 border border-blue-200">
-                <h3 className="font-semibold mb-3" style={{ color: 'var(--energy-blue)' }}>
+                <h3
+                  className="font-semibold mb-3"
+                  style={{ color: 'var(--energy-blue)' }}
+                >
                   Контактна інформація
                 </h3>
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
@@ -206,14 +269,22 @@ export function ConsultationModal({ trigger }: ConsultationModalProps) {
 
               {/* Consultation Details */}
               <div className="bg-yellow-50 rounded-lg p-4 border border-yellow-200">
-                <h3 className="font-semibold mb-3" style={{ color: 'var(--energy-blue)' }}>
+                <h3
+                  className="font-semibold mb-3"
+                  style={{ color: 'var(--energy-blue)' }}
+                >
                   Деталі консультації
                 </h3>
-                
+
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mb-4">
                   <div>
                     <Label htmlFor="consultationType">Тип консультації *</Label>
-                    <Select onValueChange={(value) => handleSelectChange('consultationType', value)}>
+                    <Select
+                      value={formData.consultationType}
+                      onValueChange={(value) =>
+                        handleSelectChange('consultationType', value)
+                      }
+                    >
                       <SelectTrigger>
                         <SelectValue placeholder="Оберіть тип консультації" />
                       </SelectTrigger>
@@ -228,7 +299,10 @@ export function ConsultationModal({ trigger }: ConsultationModalProps) {
                   </div>
                   <div>
                     <Label htmlFor="topic">Тема консультації *</Label>
-                    <Select onValueChange={(value) => handleSelectChange('topic', value)}>
+                    <Select
+                      value={formData.topic}
+                      onValueChange={(value) => handleSelectChange('topic', value)}
+                    >
                       <SelectTrigger>
                         <SelectValue placeholder="Оберіть тему" />
                       </SelectTrigger>
@@ -256,7 +330,7 @@ export function ConsultationModal({ trigger }: ConsultationModalProps) {
                           {formData.preferredDate ? (
                             format(formData.preferredDate, 'dd MMMM yyyy', { locale: uk })
                           ) : (
-                            "Оберіть дату"
+                            'Оберіть дату'
                           )}
                         </Button>
                       </PopoverTrigger>
@@ -265,7 +339,11 @@ export function ConsultationModal({ trigger }: ConsultationModalProps) {
                           mode="single"
                           selected={formData.preferredDate}
                           onSelect={handleDateChange}
-                          disabled={(date) => date < new Date() || date.getDay() === 0 || date.getDay() === 6}
+                          disabled={(date) =>
+                            date < new Date() ||
+                            date.getDay() === 0 ||
+                            date.getDay() === 6
+                          }
                           initialFocus
                         />
                       </PopoverContent>
@@ -273,7 +351,12 @@ export function ConsultationModal({ trigger }: ConsultationModalProps) {
                   </div>
                   <div>
                     <Label htmlFor="preferredTime">Бажаний час *</Label>
-                    <Select onValueChange={(value) => handleSelectChange('preferredTime', value)}>
+                    <Select
+                      value={formData.preferredTime}
+                      onValueChange={(value) =>
+                        handleSelectChange('preferredTime', value)
+                      }
+                    >
                       <SelectTrigger>
                         <SelectValue placeholder="Оберіть час" />
                       </SelectTrigger>
@@ -322,7 +405,7 @@ export function ConsultationModal({ trigger }: ConsultationModalProps) {
                   {isSubmitting ? (
                     <motion.div
                       animate={{ rotate: 360 }}
-                      transition={{ duration: 1, repeat: Infinity, ease: "linear" }}
+                      transition={{ duration: 1, repeat: Infinity, ease: 'linear' }}
                       className="w-5 h-5 border-2 border-white border-t-transparent rounded-full mr-2"
                     />
                   ) : (

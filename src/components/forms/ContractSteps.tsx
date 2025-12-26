@@ -11,6 +11,7 @@ import { consumerTypes } from '../data/constants';
 interface StepProps {
   formData: any;
   onInputChange: (name: string, value: string | boolean) => void;
+  onNavigate?: (page: string) => void;
 }
 
 export function Step1ConsumerType({ formData, onInputChange }: StepProps) {
@@ -228,7 +229,7 @@ export function Step3ConnectionDetails({ formData, onInputChange }: StepProps) {
   );
 }
 
-export function Step4Confirmation({ formData, onInputChange }: StepProps) {
+export function Step4Confirmation({ formData, onInputChange, onNavigate }: StepProps) {
   return (
     <motion.div
       key="step4"
@@ -262,27 +263,21 @@ export function Step4Confirmation({ formData, onInputChange }: StepProps) {
         <div className="space-y-4">
           <div className="flex items-start space-x-2">
             <Checkbox
-              id="agreesToTerms"
-              checked={formData.agreesToTerms}
-              onCheckedChange={(checked) => onInputChange('agreesToTerms', checked as boolean)}
-              required
-            />
-            <Label htmlFor="agreesToTerms" className="text-sm">
-              Я погоджуюся з <button className="underline text-blue-600">умовами надання послуг</button> та 
-              <button className="underline text-blue-600 ml-1">правилами електропостачання</button> *
-            </Label>
-          </div>
-
-          <div className="flex items-start space-x-2">
-            <Checkbox
               id="agreesToProcessing"
               checked={formData.agreesToProcessing}
               onCheckedChange={(checked) => onInputChange('agreesToProcessing', checked as boolean)}
               required
             />
             <Label htmlFor="agreesToProcessing" className="text-sm">
-              Я даю згоду на обробку персональних даних відповідно до 
-              <button className="underline text-blue-600 ml-1">політики конфіденційності</button> *
+              Я даю згоду на обробку персональних даних відповідно до{' '}
+              <button 
+                type="button"
+                onClick={() => onNavigate?.('privacy')}
+                className="underline text-blue-600 hover:text-blue-800 transition-colors"
+              >
+                політики конфіденційності
+              </button>{' '}
+              *
             </Label>
           </div>
 
@@ -301,3 +296,5 @@ export function Step4Confirmation({ formData, onInputChange }: StepProps) {
     </motion.div>
   );
 }
+
+

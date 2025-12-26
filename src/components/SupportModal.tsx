@@ -24,6 +24,7 @@ export function SupportModal({ trigger }: SupportModalProps) {
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [isSubmitted, setIsSubmitted] = useState(false);
   const [isOpen, setIsOpen] = useState(false);
+  const [ticketId, setTicketId] = useState<string | null>(null);
 
   const handleInputChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
     const { name, value } = e.target;
@@ -43,26 +44,57 @@ export function SupportModal({ trigger }: SupportModalProps) {
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     setIsSubmitting(true);
-    
-    // Simulate form submission
-    await new Promise(resolve => setTimeout(resolve, 2000));
-    
-    setIsSubmitting(false);
-    setIsSubmitted(true);
-    
-    // Reset form after success
-    setTimeout(() => {
-      setIsSubmitted(false);
-      setIsOpen(false);
-      setFormData({
-        name: '',
-        phone: '',
-        email: '',
-        urgency: '',
-        issue: '',
-        description: ''
+
+    try {
+      const response = await fetch('https://formspree.io/f/xreznyng', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+          Accept: 'application/json'
+        },
+        body: JSON.stringify({
+          formType: 'support_request',
+          name: formData.name,
+          phone: formData.phone,
+          email: formData.email,
+          urgency: formData.urgency,
+          issueType: formData.issue,
+          description: formData.description
+        })
       });
-    }, 3000);
+
+      if (!response.ok) {
+        console.error('Помилка при надсиланні звернення:', await response.text());
+        alert('Сталася помилка при надсиланні звернення. Спробуйте, будь ласка, пізніше.');
+        setIsSubmitting(false);
+        return;
+      }
+
+      const newTicketId = Math.random().toString(36).substr(2, 9).toUpperCase();
+      setTicketId(newTicketId);
+
+      setIsSubmitting(false);
+      setIsSubmitted(true);
+
+      // Скидаємо форму та закриваємо модалку через 3 секунди
+      setTimeout(() => {
+        setIsSubmitted(false);
+        setIsOpen(false);
+        setFormData({
+          name: '',
+          phone: '',
+          email: '',
+          urgency: '',
+          issue: '',
+          description: ''
+        });
+        setTicketId(null);
+      }, 3000);
+    } catch (error) {
+      console.error('Помилка мережі при надсиланні звернення:', error);
+      alert('Не вдалося відправити звернення. Перевірте інтернет і спробуйте ще раз.');
+      setIsSubmitting(false);
+    }
   };
 
   const urgencyOptions = [
@@ -112,10 +144,10 @@ export function SupportModal({ trigger }: SupportModalProps) {
               </h4>
               <p className="text-gray-600 mb-4">
                 Ваше звернення отримано та передано до відповідного відділу. 
-                Ми зв'яжемося з вами протягом 24 годин.
+                Ми зв'яжемося з Вами якнайшвидше.
               </p>
               <div className="text-sm text-gray-500">
-                Номер звернення: #{Math.random().toString(36).substr(2, 9).toUpperCase()}
+                Номер звернення: #{ticketId || '—'}
               </div>
             </motion.div>
           ) : (
@@ -163,7 +195,10 @@ export function SupportModal({ trigger }: SupportModalProps) {
               <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                 <div>
                   <Label htmlFor="urgency">Терміновість звернення *</Label>
-                  <Select onValueChange={(value) => handleSelectChange('urgency', value)}>
+                  <Select
+                    value={formData.urgency}
+                    onValueChange={(value) => handleSelectChange('urgency', value)}
+                  >
                     <SelectTrigger>
                       <SelectValue placeholder="Оберіть рівень терміновості" />
                     </SelectTrigger>
@@ -178,7 +213,10 @@ export function SupportModal({ trigger }: SupportModalProps) {
                 </div>
                 <div>
                   <Label htmlFor="issue">Тип звернення *</Label>
-                  <Select onValueChange={(value) => handleSelectChange('issue', value)}>
+                  <Select
+                    value={formData.issue}
+                    onValueChange={(value) => handleSelectChange('issue', value)}
+                  >
                     <SelectTrigger>
                       <SelectValue placeholder="Оберіть тип питання" />
                     </SelectTrigger>
@@ -233,7 +271,15 @@ export function SupportModal({ trigger }: SupportModalProps) {
                 </Button>
                 <Button
                   type="submit"
-                  disabled={isSubmitting || !formData.name || !formData.phone || !formData.email || !formData.urgency || !formData.issue || !formData.description}
+                  disabled={
+                    isSubmitting ||
+                    !formData.name ||
+                    !formData.phone ||
+                    !formData.email ||
+                    !formData.urgency ||
+                    !formData.issue ||
+                    !formData.description
+                  }
                   className="flex-1 energy-gradient text-white hover:opacity-90 disabled:opacity-50"
                 >
                   {isSubmitting ? (

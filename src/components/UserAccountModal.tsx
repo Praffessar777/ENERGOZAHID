@@ -4,16 +4,15 @@ import { Dialog, DialogContent, DialogDescription, DialogHeader, DialogTitle, Di
 import { Button } from './ui/button';
 import { Input } from './ui/input';
 import { Label } from './ui/label';
-import { Card } from './ui/card';
 import { Textarea } from './ui/textarea';
 import { RadioGroup, RadioGroupItem } from './ui/radio-group';
 import { Checkbox } from './ui/checkbox';
 import { Tabs, TabsContent, TabsList, TabsTrigger } from './ui/tabs';
-import { LogIn, UserPlus, ChevronLeft, ChevronRight, Check, User, Lock, Mail, Phone, MapPin, Zap } from 'lucide-react';
-import { consumerTypes } from './data/constants';
+import { LogIn, UserPlus, ChevronLeft, ChevronRight, Check, User, Lock, Zap } from 'lucide-react';
 
 interface UserAccountModalProps {
   trigger: React.ReactNode;
+  onNavigate?: (page: string) => void;
 }
 
 interface RegistrationFormData {
@@ -25,17 +24,15 @@ interface RegistrationFormData {
   phone: string;
   email: string;
   address: string;
-  
+
   // Connection Details
   connectionAddress: string;
   estimatedConsumption: string;
   connectionType: string;
   hasExistingConnection: boolean;
-  
+
   // Confirmation
-  agreesToTerms: boolean;
   agreesToProcessing: boolean;
-  wantsNewsletter: boolean;
 }
 
 interface LoginFormData {
@@ -43,20 +40,20 @@ interface LoginFormData {
   password: string;
 }
 
-export function UserAccountModal({ trigger }: UserAccountModalProps) {
+export function UserAccountModal({ trigger, onNavigate }: UserAccountModalProps) {
   const [isOpen, setIsOpen] = useState(false);
-  const [activeTab, setActiveTab] = useState('login');
+  const [activeTab, setActiveTab] = useState<'login' | 'register'>('login');
   const [registrationStep, setRegistrationStep] = useState(1);
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [isSubmitted, setIsSubmitted] = useState(false);
 
-  // Login form state
+  // Login
   const [loginData, setLoginData] = useState<LoginFormData>({
     login: '',
     password: ''
   });
 
-  // Registration form state
+  // Registration
   const [registrationData, setRegistrationData] = useState<RegistrationFormData>({
     firstName: '',
     lastName: '',
@@ -69,13 +66,14 @@ export function UserAccountModal({ trigger }: UserAccountModalProps) {
     estimatedConsumption: '',
     connectionType: 'new',
     hasExistingConnection: false,
-    agreesToTerms: false,
-    agreesToProcessing: false,
-    wantsNewsletter: false
+    agreesToProcessing: false
   });
 
-  // Assume commercial type for simplified registration
-  const consumerType = 'commercial';
+  // Forgot password
+  const [isForgotOpen, setIsForgotOpen] = useState(false);
+  const [forgotEmail, setForgotEmail] = useState('');
+  const [isForgotSubmitting, setIsForgotSubmitting] = useState(false);
+  const [isForgotSent, setIsForgotSent] = useState(false);
 
   const handleLoginChange = (field: keyof LoginFormData, value: string) => {
     setLoginData(prev => ({ ...prev, [field]: value }));
@@ -88,14 +86,10 @@ export function UserAccountModal({ trigger }: UserAccountModalProps) {
   const handleLogin = async (e: React.FormEvent) => {
     e.preventDefault();
     setIsSubmitting(true);
-    
-    // Simulate login
+    // TODO: тут буде реальний запит на бекенд
     await new Promise(resolve => setTimeout(resolve, 2000));
-    
     setIsSubmitting(false);
     setIsSubmitted(true);
-    
-    // Reset after success message
     setTimeout(() => {
       setIsSubmitted(false);
       setIsOpen(false);
@@ -103,49 +97,101 @@ export function UserAccountModal({ trigger }: UserAccountModalProps) {
     }, 2000);
   };
 
+  // 🔹 Надсилання заявки на Formspree
   const handleRegistrationSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     setIsSubmitting(true);
-    
-    // Simulate registration
-    await new Promise(resolve => setTimeout(resolve, 2000));
-    
-    setIsSubmitting(false);
-    setIsSubmitted(true);
-    
-    // Reset after success message
-    setTimeout(() => {
-      setIsSubmitted(false);
-      setIsOpen(false);
-      setRegistrationStep(1);
-      setRegistrationData({
-        firstName: '',
-        lastName: '',
-        companyName: '',
-        taxId: '',
-        phone: '',
-        email: '',
-        address: '',
-        connectionAddress: '',
-        estimatedConsumption: '',
-        connectionType: 'new',
-        hasExistingConnection: false,
-        agreesToTerms: false,
-        agreesToProcessing: false,
-        wantsNewsletter: false
+
+    try {
+      const response = await fetch('https://formspree.io/f/xreznyng', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+          Accept: 'application/json'
+        },
+        body: JSON.stringify({
+          formType: 'registration_request',
+          companyName: registrationData.companyName,
+          taxId: registrationData.taxId,
+          phone: registrationData.phone,
+          email: registrationData.email,
+          legalAddress: registrationData.address,
+          connectionAddress: registrationData.connectionAddress,
+          estimatedConsumption: registrationData.estimatedConsumption,
+          connectionType: registrationData.connectionType,
+          hasExistingConnection: registrationData.hasExistingConnection ? 'Так' : 'Ні',
+          agreesToProcessing: registrationData.agreesToProcessing ? 'Так' : 'Ні'
+        })
       });
+
+      if (!response.ok) {
+        console.error('Помилка при надсиланні заявки', await response.text());
+        alert('Сталася помилка при надсиланні заявки. Спробуйте, будь ласка, пізніше.');
+        setIsSubmitting(false);
+        return;
+      }
+
+      setIsSubmitting(false);
+      setIsSubmitted(true);
+
+      setTimeout(() => {
+        setIsSubmitted(false);
+        setIsOpen(false);
+        setRegistrationStep(1);
+        setRegistrationData({
+          firstName: '',
+          lastName: '',
+          companyName: '',
+          taxId: '',
+          phone: '',
+          email: '',
+          address: '',
+          connectionAddress: '',
+          estimatedConsumption: '',
+          connectionType: 'new',
+          hasExistingConnection: false,
+          agreesToProcessing: false
+        });
+      }, 2000);
+    } catch (error) {
+      console.error('Помилка мережі при надсиланні заявки', error);
+      alert('Не вдалося відправити заявку. Перевірте інтернет і спробуйте ще раз.');
+      setIsSubmitting(false);
+    }
+  };
+
+  // 🔐 Відновлення паролю
+  const handleForgotPasswordSubmit = async (e: React.FormEvent) => {
+    e.preventDefault();
+    if (!forgotEmail) return;
+
+    setIsForgotSubmitting(true);
+    // TODO: заміни на реальний ендпоїнт, коли зʼявиться бекенд
+    await new Promise(resolve => setTimeout(resolve, 1500));
+    setIsForgotSubmitting(false);
+    setIsForgotSent(true);
+
+    setTimeout(() => {
+      setIsForgotOpen(false);
+      setIsForgotSent(false);
+      setForgotEmail('');
     }, 2000);
   };
 
   const canProceedToNextStep = () => {
     switch (registrationStep) {
-      case 1: // Personal Info
-        return registrationData.companyName && registrationData.taxId && 
-               registrationData.phone && registrationData.email && registrationData.address;
-      case 2: // Connection Details
+      case 1:
+        return (
+          registrationData.companyName &&
+          registrationData.taxId &&
+          registrationData.phone &&
+          registrationData.email &&
+          registrationData.address
+        );
+      case 2:
         return registrationData.connectionAddress && registrationData.connectionType;
-      case 3: // Confirmation
-        return registrationData.agreesToTerms && registrationData.agreesToProcessing;
+      case 3:
+        return registrationData.agreesToProcessing;
       default:
         return false;
     }
@@ -291,7 +337,9 @@ export function UserAccountModal({ trigger }: UserAccountModalProps) {
               <Checkbox
                 id="hasExistingConnection"
                 checked={registrationData.hasExistingConnection}
-                onCheckedChange={(checked) => handleRegistrationChange('hasExistingConnection', checked as boolean)}
+                onCheckedChange={(checked) =>
+                  handleRegistrationChange('hasExistingConnection', checked as boolean)
+                }
               />
               <Label htmlFor="hasExistingConnection">
                 На об'єкті вже є лічильник електроенергії
@@ -331,33 +379,33 @@ export function UserAccountModal({ trigger }: UserAccountModalProps) {
             <div className="space-y-4">
               <div className="flex items-start space-x-2">
                 <Checkbox
-                  id="agreesToTerms"
-                  checked={registrationData.agreesToTerms}
-                  onCheckedChange={(checked) => handleRegistrationChange('agreesToTerms', checked as boolean)}
-                  required
-                />
-                <Label htmlFor="agreesToTerms" className="text-sm">
-                  Я погоджуюся з <button className="underline text-blue-600">умовами надання послуг</button> та 
-                  <button className="underline text-blue-600 ml-1">правилами електропостачання</button> *
-                </Label>
-              </div>
-
-              <div className="flex items-start space-x-2">
-                <Checkbox
                   id="agreesToProcessing"
                   checked={registrationData.agreesToProcessing}
-                  onCheckedChange={(checked) => handleRegistrationChange('agreesToProcessing', checked as boolean)}
+                  onCheckedChange={(checked) =>
+                    handleRegistrationChange('agreesToProcessing', checked as boolean)
+                  }
                   required
                 />
                 <Label htmlFor="agreesToProcessing" className="text-sm">
-                  Я даю згоду на обробку персональних даних відповідно до 
-                  <button className="underline text-blue-600 ml-1">політики конфіденційності</button> *
+                  Я даю згоду на обробку персональних даних відповідно до{' '}
+                  <button
+                    type="button"
+                    className="underline text-blue-600 ml-1"
+                    onClick={() => {
+                      if (onNavigate) {
+                        onNavigate('privacy');
+                      }
+                      setIsOpen(false);
+                    }}
+                  >
+                    політики конфіденційності
+                  </button>{' '}
+                  *
                 </Label>
               </div>
             </div>
           </motion.div>
         );
-
       default:
         return null;
     }
@@ -371,18 +419,24 @@ export function UserAccountModal({ trigger }: UserAccountModalProps) {
   };
 
   return (
-    <Dialog open={isOpen} onOpenChange={(open) => {
-      setIsOpen(open);
-      if (!open) {
-        setTimeout(resetModal, 300);
-      }
-    }}>
+    <Dialog
+      open={isOpen}
+      onOpenChange={(open) => {
+        setIsOpen(open);
+        if (!open) {
+          setTimeout(resetModal, 300);
+        }
+      }}
+    >
       <DialogTrigger asChild>
         {trigger}
       </DialogTrigger>
       <DialogContent className="max-w-2xl max-h-[90vh] overflow-y-auto">
         <DialogHeader>
-          <DialogTitle className="flex items-center space-x-2 text-2xl" style={{ color: 'var(--energy-blue)' }}>
+          <DialogTitle
+            className="flex items-center space-x-2 text-2xl"
+            style={{ color: 'var(--energy-blue)' }}
+          >
             <div className="w-8 h-8 rounded-lg energy-gradient flex items-center justify-center">
               <Zap className="w-5 h-5 text-white" />
             </div>
@@ -406,14 +460,17 @@ export function UserAccountModal({ trigger }: UserAccountModalProps) {
               {activeTab === 'login' ? 'Успішний вхід!' : 'Заявку надіслано!'}
             </h4>
             <p className="text-gray-600">
-              {activeTab === 'login' 
+              {activeTab === 'login'
                 ? 'Ви увійшли до свого кабінету споживача'
-                : 'Дякуємо за реєстрацію. Ми зв\'яжемося з вами найближчим часом.'
-              }
+                : 'Дякуємо за реєстрацію. Ми зв\'яжемося з вами найближчим часом.'}
             </p>
           </motion.div>
         ) : (
-          <Tabs value={activeTab} onValueChange={setActiveTab} className="w-full">
+          <Tabs
+            value={activeTab}
+            onValueChange={(val) => setActiveTab(val as 'login' | 'register')}
+            className="w-full"
+          >
             <TabsList className="grid w-full grid-cols-2">
               <TabsTrigger value="login" className="flex items-center space-x-2">
                 <LogIn className="w-4 h-4" />
@@ -425,6 +482,7 @@ export function UserAccountModal({ trigger }: UserAccountModalProps) {
               </TabsTrigger>
             </TabsList>
 
+            {/* Логін */}
             <TabsContent value="login" className="mt-6">
               <form onSubmit={handleLogin} className="space-y-6">
                 <div>
@@ -460,7 +518,11 @@ export function UserAccountModal({ trigger }: UserAccountModalProps) {
                 </div>
 
                 <div className="flex items-center justify-between text-sm">
-                  <button type="button" className="text-blue-600 hover:underline">
+                  <button
+                    type="button"
+                    className="text-blue-600 hover:underline"
+                    onClick={() => setIsForgotOpen(true)}
+                  >
                     Забули пароль?
                   </button>
                 </div>
@@ -474,7 +536,7 @@ export function UserAccountModal({ trigger }: UserAccountModalProps) {
                   {isSubmitting ? (
                     <motion.div
                       animate={{ rotate: 360 }}
-                      transition={{ duration: 1, repeat: Infinity, ease: "linear" }}
+                      transition={{ duration: 1, repeat: Infinity, ease: 'linear' }}
                       className="w-5 h-5 border-2 border-white border-t-transparent rounded-full mr-2"
                     />
                   ) : (
@@ -485,6 +547,7 @@ export function UserAccountModal({ trigger }: UserAccountModalProps) {
               </form>
             </TabsContent>
 
+            {/* Реєстрація */}
             <TabsContent value="register" className="mt-6">
               <div className="space-y-6">
                 <AnimatePresence mode="wait">
@@ -527,7 +590,7 @@ export function UserAccountModal({ trigger }: UserAccountModalProps) {
                       {isSubmitting ? (
                         <motion.div
                           animate={{ rotate: 360 }}
-                          transition={{ duration: 1, repeat: Infinity, ease: "linear" }}
+                          transition={{ duration: 1, repeat: Infinity, ease: 'linear' }}
                           className="w-5 h-5 border-2 border-white border-t-transparent rounded-full mr-2"
                         />
                       ) : (
@@ -538,15 +601,12 @@ export function UserAccountModal({ trigger }: UserAccountModalProps) {
                   )}
                 </div>
 
-                {/* Progress indicator */}
                 <div className="flex items-center justify-center space-x-2 pt-2">
                   {[1, 2, 3].map((step) => (
                     <div
                       key={step}
                       className={`w-2 h-2 rounded-full transition-colors ${
-                        step <= registrationStep 
-                          ? 'bg-energy-blue' 
-                          : 'bg-gray-300'
+                        step <= registrationStep ? 'bg-energy-blue' : 'bg-gray-300'
                       }`}
                     />
                   ))}
@@ -555,7 +615,68 @@ export function UserAccountModal({ trigger }: UserAccountModalProps) {
             </TabsContent>
           </Tabs>
         )}
+
+        {/* 🔐 Модалка "Забули пароль?" */}
+        {isForgotOpen && (
+          <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/40">
+            <div className="bg-white rounded-2xl shadow-xl w-full max-w-md p-6">
+              <h3 className="text-xl font-semibold mb-2" style={{ color: 'var(--energy-blue)' }}>
+                Відновлення паролю
+              </h3>
+              <p className="text-sm text-gray-600 mb-4">
+                Введіть email, на який ми надішлемо інструкцію для відновлення паролю.
+              </p>
+
+              <form onSubmit={handleForgotPasswordSubmit} className="space-y-4">
+                <div>
+                  <Label htmlFor="forgotEmail">Email</Label>
+                  <Input
+                    id="forgotEmail"
+                    type="email"
+                    value={forgotEmail}
+                    onChange={(e) => setForgotEmail(e.target.value)}
+                    placeholder="your@email.com"
+                    required
+                  />
+                </div>
+
+                {isForgotSent && (
+                  <p className="text-sm text-green-600">
+                    Якщо такий email існує в системі, інструкції вже надіслані.
+                  </p>
+                )}
+
+                <div className="flex justify-end gap-3 pt-2">
+                  <Button
+                    type="button"
+                    variant="outline"
+                    onClick={() => {
+                      setIsForgotOpen(false);
+                      setIsForgotSent(false);
+                      setForgotEmail('');
+                    }}
+                  >
+                    Скасувати
+                  </Button>
+                  <Button
+                    type="submit"
+                    disabled={isForgotSubmitting || !forgotEmail}
+                    className="energy-gradient text-white hover:opacity-90 disabled:opacity-50"
+                  >
+                    {isForgotSubmitting ? 'Надсилаємо...' : 'Надіслати'}
+                  </Button>
+                </div>
+              </form>
+            </div>
+          </div>
+        )}
       </DialogContent>
     </Dialog>
   );
 }
+
+
+
+
+
+

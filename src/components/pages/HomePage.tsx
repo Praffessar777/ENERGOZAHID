@@ -59,12 +59,11 @@ const cabinetFeatures = [
 
 export function HomePage({ onNavigate }: HomePageProps) {
 
-  // 🔹 ОДИН РАЗ ОГОЛОШУЄМО ФУНКЦІЮ ДЛЯ ЗАВАНТАЖЕННЯ
   const handleDownload = (fileName?: string) => {
     if (!fileName) return;
 
     const link = document.createElement('a');
-    link.href = fileName;                       // шлях до файлу у /public
+    link.href = fileName;
     link.download = fileName.split('/').pop() || 'document.pdf';
     document.body.appendChild(link);
     link.click();
@@ -84,7 +83,6 @@ export function HomePage({ onNavigate }: HomePageProps) {
             transition={{ duration: 0.8 }}
             className="max-w-4xl mx-auto text-left"
           >
-            {/* Main Headline - Typography like reference */}
             <motion.h1 
               className="mb-8"
               initial={{ opacity: 0, y: 20 }}
@@ -103,7 +101,6 @@ export function HomePage({ onNavigate }: HomePageProps) {
               </div>
             </motion.h1>
             
-            {/* Description */}
             <motion.p 
               className="text-base md:text-lg lg:text-xl opacity-90 max-w-2xl"
               initial={{ opacity: 0, y: 20 }}
@@ -115,7 +112,6 @@ export function HomePage({ onNavigate }: HomePageProps) {
           </motion.div>
         </div>
 
-        {/* Simplified Scroll Indicator */}
         <motion.div
           className="absolute bottom-8 left-1/2 transform -translate-x-1/2"
           animate={{ 
@@ -144,7 +140,7 @@ export function HomePage({ onNavigate }: HomePageProps) {
       </section>
 
       {/* Advantages Section */}
-      <Section title="НАШІ ПЕРЕВАГИ" subtitle="Чому обирають ЕНЕРГОЗАХІД для своїх енергетичних потреб" background="gray">
+      <Section title="НАШІ ПЕРЕВАГИ" subtitle="Чому обирають ТОВ &quot;ЕНЕРГОЗАХІД&quot; для своїх енергетичних потреб" background="gray">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
           {advantages.map((advantage, index) => {
             const IconComponent = advantageIcons[index];
@@ -181,7 +177,6 @@ export function HomePage({ onNavigate }: HomePageProps) {
       {/* Consumer Cabinet Section */}
       <Section title="КАБІНЕТ СПОЖИВАЧА" subtitle="Ваше споживання під Вашим контролем 24/7 за допомогою онлайн Кабінету">
         <div className="max-w-3xl mx-auto">
-          {/* Features - Centered */}
           <motion.div
             initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
@@ -217,7 +212,7 @@ export function HomePage({ onNavigate }: HomePageProps) {
               );
             })}
 
-            {/* CTA Button */}
+            {/* ▶ ОНОВЛЕНА КНОПКА З onNavigate ◀ */}
             <motion.div
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
@@ -238,6 +233,7 @@ export function HomePage({ onNavigate }: HomePageProps) {
                       ПЕРЕЙТИ В КАБІНЕТ СПОЖИВАЧА
                     </Button>
                   }
+                  onNavigate={onNavigate}
                 />
               </motion.div>
             </motion.div>
@@ -286,11 +282,11 @@ export function HomePage({ onNavigate }: HomePageProps) {
                       
                         const link = document.createElement('a');
                         link.href = doc.fileName;
-                        link.download = doc.fileName.split('/').pop() || 'document.pdf'; // ← імʼя файлу
+                        link.download = doc.fileName.split('/').pop() || 'document.pdf';
                         document.body.appendChild(link);
                         link.click();
                         document.body.removeChild(link);
-                        }}
+                      }}
                     >
                       <Download className="w-4 h-4 mr-2" />
                       Завантажити
@@ -322,3 +318,4 @@ export function HomePage({ onNavigate }: HomePageProps) {
     </div>
   );
 }
+

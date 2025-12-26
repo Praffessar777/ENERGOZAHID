@@ -7,14 +7,29 @@ import { Check, ChevronRight, ChevronLeft, User, FileText, CreditCard, CheckCirc
 import { HeroSection } from '../common/HeroSection';
 import { Step1ConsumerType, Step2PersonalInfo, Step3ConnectionDetails, Step4Confirmation } from '../forms/ContractSteps';
 
-export function ContractPage() {
+interface ContractPageProps {
+  onNavigate: (page: string) => void;
+}
+
+export function ContractPage({ onNavigate }: ContractPageProps) {
   const [currentStep, setCurrentStep] = useState(1);
   const [isSubmitted, setIsSubmitted] = useState(false);
+  const [isSubmitting, setIsSubmitting] = useState(false); // 👈 додано
   const [formData, setFormData] = useState({
-    consumerType: '', firstName: '', lastName: '', phone: '', email: '',
-    companyName: '', taxId: '', address: '', connectionAddress: '',
-    estimatedConsumption: '', connectionType: '', hasExistingConnection: false,
-    agreesToTerms: false, agreesToProcessing: false, wantsNewsletter: false
+    consumerType: '',
+    firstName: '',
+    lastName: '',
+    phone: '',
+    email: '',
+    companyName: '',
+    taxId: '',
+    address: '',
+    connectionAddress: '',
+    estimatedConsumption: '',
+    connectionType: '',
+    hasExistingConnection: false,
+    agreesToProcessing: false,
+    wantsNewsletter: false
   });
 
   const steps = [
@@ -31,9 +46,37 @@ export function ContractPage() {
   const nextStep = () => currentStep < 4 && setCurrentStep(currentStep + 1);
   const prevStep = () => currentStep > 1 && setCurrentStep(currentStep - 1);
 
+  // 🔗 ІНТЕГРАЦІЯ З FORMSPREE
   const handleSubmit = async () => {
-    await new Promise(resolve => setTimeout(resolve, 2000));
-    setIsSubmitted(true);
+    if (!formData.agreesToProcessing || isSubmitting) return;
+
+    setIsSubmitting(true);
+    try {
+      const response = await fetch('https://formspree.io/f/xreznyng', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+          Accept: 'application/json'
+        },
+        body: JSON.stringify({
+          formType: 'contract_request',
+          source: 'ContractPage (Кабінет споживача)',
+          ...formData
+        })
+      });
+
+      if (response.ok) {
+        setIsSubmitted(true);
+      } else {
+        console.error('Formspree error:', await response.text());
+        alert('Сталася помилка при надсиланні заявки. Спробуйте, будь ласка, пізніше.');
+      }
+    } catch (error) {
+      console.error('Formspree error:', error);
+      alert('Сталася помилка при надсиланні заявки. Перевірте інтернет або спробуйте пізніше.');
+    } finally {
+      setIsSubmitting(false);
+    }
   };
 
   const progress = (currentStep / 4) * 100;
@@ -61,11 +104,11 @@ export function ContractPage() {
               Заявка надіслана!
             </h2>
             <p className="text-gray-600 mb-6">
-              Дякуємо за звернення. Наш менеджер зв'яжеться з вами протягом 24 годин для узгодження деталей підключення.
+              Дякуємо за звернення. Наш менеджер зв'яжеться з Вами якнайшвидше для узгодження деталей підключення.
             </p>
             <div className="space-y-3 text-sm text-gray-500">
               <p>Номер заявки: #EZ-{Date.now().toString().slice(-6)}</p>
-              <p>На вашу електронну пошту надіслано копію заявки</p>
+              <p>Якщо Ви вказали email, на нього буде надіслано підтвердження.</p>
             </div>
             <Button
               onClick={() => window.location.reload()}
@@ -81,11 +124,16 @@ export function ContractPage() {
 
   const renderCurrentStep = () => {
     switch (currentStep) {
-      case 1: return <Step1ConsumerType formData={formData} onInputChange={handleInputChange} />;
-      case 2: return <Step2PersonalInfo formData={formData} onInputChange={handleInputChange} />;
-      case 3: return <Step3ConnectionDetails formData={formData} onInputChange={handleInputChange} />;
-      case 4: return <Step4Confirmation formData={formData} onInputChange={handleInputChange} />;
-      default: return null;
+      case 1:
+        return <Step1ConsumerType formData={formData} onInputChange={handleInputChange} />;
+      case 2:
+        return <Step2PersonalInfo formData={formData} onInputChange={handleInputChange} />;
+      case 3:
+        return <Step3ConnectionDetails formData={formData} onInputChange={handleInputChange} />;
+      case 4:
+        return <Step4Confirmation formData={formData} onInputChange={handleInputChange} onNavigate={onNavigate} />;
+      default:
+        return null;
     }
   };
 
@@ -143,7 +191,7 @@ export function ContractPage() {
               <Button
                 variant="outline"
                 onClick={prevStep}
-                disabled={currentStep === 1}
+                disabled={currentStep === 1 || isSubmitting}
                 className="flex items-center space-x-2"
               >
                 <ChevronLeft className="w-4 h-4" />
@@ -154,6 +202,7 @@ export function ContractPage() {
                 <Button
                   onClick={nextStep}
                   disabled={
+                    isSubmitting ||
                     (currentStep === 1 && !formData.consumerType) ||
                     (currentStep === 2 && (!formData.phone || !formData.email)) ||
                     (currentStep === 3 && (!formData.connectionAddress || !formData.connectionType))
@@ -166,11 +215,11 @@ export function ContractPage() {
               ) : (
                 <Button
                   onClick={handleSubmit}
-                  disabled={!formData.agreesToTerms || !formData.agreesToProcessing}
+                  disabled={!formData.agreesToProcessing || isSubmitting}
                   className="energy-gradient text-white hover:opacity-90 energy-pulse flex items-center space-x-2"
                 >
                   <CheckCircle className="w-4 h-4" />
-                  <span>Підтвердити заявку</span>
+                  <span>{isSubmitting ? 'Надсилаємо...' : 'Підтвердити заявку'}</span>
                 </Button>
               )}
             </div>

@@ -94,12 +94,13 @@ export function Footer({ onNavigate }: FooterProps) {
               © 2025 ЕНЕРГОЗАХІД. Всі права захищені.
             </div>
             <div className="flex items-center space-x-6 text-sm text-gray-500">
-              <button className="hover:text-[#264A96] transition-colors">
+              <motion.button 
+                onClick={() => onNavigate('privacy')}
+                className="hover:text-[#264A96] transition-colors"
+                whileHover={{ x: 2 }}
+              >
                 Політика конфіденційності
-              </button>
-              <button className="hover:text-[#264A96] transition-colors">
-                Умови використання
-              </button>
+              </motion.button>
             </div>
           </div>
         </div>
