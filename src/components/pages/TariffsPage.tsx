@@ -19,7 +19,7 @@ export function TariffsPage() {
     },
     { name: 'Зразок рахунку за електроенергію', 
       size: '956 KB',
-      fileName: '/pdf/Priklad-rozyasnennya-rahunku-za-elektrichnu-energiju.pdf'
+      fileName: '/pdf/Приклад_роз\'яснення_рахунку_за_електричну_енергію.pdf'
     },
     { name: 'Ціна', 
       size: '1.2 MB',

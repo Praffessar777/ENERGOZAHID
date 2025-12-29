@@ -71,8 +71,8 @@ export function DocumentsPage() {
       date: '01.01.2025',
       type: 'Інструкція',
       format: 'PDF',
-      viewLink: '/pdf/Priklad-rozyasnennya-rahunku-za-elektrichnu-energiju.pdf',
-      downloadLink: '/pdf/Priklad-rozyasnennya-rahunku-za-elektrichnu-energiju.pdf'
+      viewLink: '/pdf/Приклад_роз\'яснення_рахунку_за_електричну_енергію.pdf',
+      downloadLink: '/pdf/Приклад_роз\'яснення_рахунку_за_електричну_енергію.pdf'
     },
     {
       id: 6,
@@ -366,7 +366,7 @@ export function DocumentsPage() {
     {
       id: 34,
       category: 'consumer-info',
-      name: 'Посилання на веб-сторінки Регулятора та операторів системи',
+      name: 'Посилання на веб-сторінки Регулятора, Держенергонагляду, Міненерго, операторів системи, адміністратора ринку, адміністратора комерційного обліку, Антимонопольного комітету України.',
       description: 'Корисні посилання на офіційні сайти НКРЕКП, операторів та інших учасників ринку',
       size: '850 KB',
       date: '10.01.2025',
@@ -1023,6 +1023,16 @@ export function DocumentsPage() {
       format: 'PDF',
       viewLink: '/pdf/Zvitnist-2024.pdf',
       downloadLink: '/pdf/Zvitnist-2024.pdf'
+    },
+    {
+      id: 90,
+      category: 'tariffs',
+      name: 'Порівняння цін/тарифів на товари, послуги в різних регіонах України, а також в Україні та інших державах.',
+      description: 'Порівняльний аналіз цін та тарифів на електроенергію в різних регіонах України та додаткова інформація щодо тарифів в європейських країнах',
+      date: '01.01.2025',
+      type: 'Аналітичний звіт',
+      viewLink: '/pdf/Порівняння_цін_на_електричну_енергію_в_Україні_та_інших_країнах.pdf',
+      downloadLink: '/pdf/Порівняння_цін_на_електричну_енергію_в_Україні_та_інших_країнах.pdf'
     }
   ];
 
