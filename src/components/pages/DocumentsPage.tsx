@@ -71,8 +71,8 @@ export function DocumentsPage() {
       date: '01.01.2025',
       type: 'Інструкція',
       format: 'PDF',
-      viewLink: '/pdf/Приклад_роз\'яснення_рахунку_за_електричну_енергію.pdf',
-      downloadLink: '/pdf/Приклад_роз\'яснення_рахунку_за_електричну_енергію.pdf'
+      viewLink: '/pdf/роз\'яснення рахунку.pdf',
+      downloadLink: '/pdf/роз\'яснення рахунку.pdf'
     },
     {
       id: 6,
