@@ -90,8 +90,8 @@ export function DocumentsPage() {
       description: 'Порівняльний аналіз цін та тарифів на електроенергію в Україні та європейських країнах',
       date: '01.01.2025',
       type: 'Аналітичний звіт',
-      viewLink: '/pdf/Electricity_Price_Comparison_2025.pdf',
-      downloadLink: '/pdf/Electricity_Price_Comparison_2025.pdf'
+      viewLink: '/pdf/Порівняння_цін_на_електричну_енергію_в_Україні_та_інших_країнах.pdf',
+      downloadLink: '/pdf/Порівняння_цін_на_електричну_енергію_в_Україні_та_інших_країнах.pdf'
     },
     {
       id: 8,
@@ -348,8 +348,8 @@ export function DocumentsPage() {
       date: '10.01.2025',
       type: 'Довідник',
       format: 'PDF',
-      viewLink: '/pdf/REIeSTR-OSR.pdf',
-      downloadLink: '/pdf/REIeSTR-OSR.pdf'
+      viewLink: '/pdf/Контактні дані для подання повідомлень про загрозу електробезпеці, контактні дані операторів системи, інформаційно-консультаційних центрів та кол-центрів учасників роздрібного ринку.pdf',
+      downloadLink: '/pdf/Контактні дані для подання повідомлень про загрозу електробезпеці, контактні дані операторів системи, інформаційно-консультаційних центрів та кол-центрів учасників роздрібного ринку.pdf'
     },
     {
       id: 33,
@@ -508,7 +508,7 @@ export function DocumentsPage() {
     {
       id: 46,
       category: 'consumer-info',
-      name: 'Перелiк послуг інформаційного відділу ТОВ ЕНЕРГОЗАХІД',
+      name: 'Перелiк послуг кол-центру ТОВ ЕНЕРГОЗАХІД',
       description: 'Повний каталог послуг та консультацій, які надає інформаційний відділ компанії',
       size: '1.3 MB',
       date: '10.01.2025',
@@ -715,9 +715,81 @@ export function DocumentsPage() {
     {
       id: 64,
       category: 'reports',
-      name: 'Звіт щодо розгляду звернень, скарг, претензій',
+      name: 'Звіт щодо розгляду звернень, скарг, претензій за 2018 рік',
       description: 'Підсумкові звіти про розгляд звернень та скарг споживачів компанії',
-      size: '3.8 MB',
+      size: '63.4 KB',
+      date: '31.12.2018',
+      type: 'Звіт',
+      format: 'PDF',
+      viewLink: '/pdf/Richnij-zvit-shhodo-rozglyadu-zvernen 2018.pdf',
+      downloadLink: '/pdf/Richnij-zvit-shhodo-rozglyadu-zvernen 2018.pdf'
+    },
+    {
+      id: 65,
+      category: 'reports',
+      name: 'Звіт щодо розгляду звернень, скарг, претензій за 2019 рік',
+      description: 'Підсумкові звіти про розгляд звернень та скарг споживачів компанії',
+      size: '64.1 KB',
+      date: '31.12.2019',
+      type: 'Звіт',
+      format: 'PDF',
+      viewLink: '/pdf/Richnij-zvit-shhodo-rozglyadu-zvernen 2019.pdf',
+      downloadLink: '/pdf/Richnij-zvit-shhodo-rozglyadu-zvernen 2019.pdf'
+    },
+    {
+      id: 66,
+      category: 'reports',
+      name: 'Звіт щодо розгляду звернень, скарг, претензій за 2020 рік',
+      description: 'Підсумкові звіти про розгляд звернень та скарг споживачів компанії',
+      size: '63.8 KB',
+      date: '31.12.2020',
+      type: 'Звіт',
+      format: 'PDF',
+      viewLink: '/pdf/Richnij-zvit-shhodo-rozglyadu-zvernen 2020.pdf',
+      downloadLink: '/pdf/Richnij-zvit-shhodo-rozglyadu-zvernen 2020.pdf'
+    },
+    {
+      id: 67,
+      category: 'reports',
+      name: 'Звіт щодо розгляду звернень, скарг, претензій за 2021 рік',
+      description: 'Підсумкові звіти про розгляд звернень та скарг споживачів компанії',
+      size: '63.6 KB',
+      date: '31.12.2021',
+      type: 'Звіт',
+      format: 'PDF',
+      viewLink: '/pdf/Richnij-zvit-shhodo-rozglyadu-zvernen 2021.pdf',
+      downloadLink: '/pdf/Richnij-zvit-shhodo-rozglyadu-zvernen 2021.pdf'
+    },
+    {
+      id: 68,
+      category: 'reports',
+      name: 'Звіт щодо розгляду звернень, скарг, претензій за 2022 рік',
+      description: 'Підсумкові звіти про розгляд звернень та скарг споживачів компанії',
+      size: '63.3 KB',
+      date: '31.12.2022',
+      type: 'Звіт',
+      format: 'PDF',
+      viewLink: '/pdf/Richnij-zvit-shhodo-rozglyadu-zvernen 2022.pdf',
+      downloadLink: '/pdf/Richnij-zvit-shhodo-rozglyadu-zvernen 2022.pdf'
+    },
+    {
+      id: 69,
+      category: 'reports',
+      name: 'Звіт щодо розгляду звернень, скарг, претензій за 2023 рік',
+      description: 'Підсумкові звіти про розгляд звернень та скарг споживачів компанії',
+      size: '63.8 KB',
+      date: '31.12.2023',
+      type: 'Звіт',
+      format: 'PDF',
+      viewLink: '/pdf/Richnij-zvit-shhodo-rozglyadu-zvernen 2023.pdf',
+      downloadLink: '/pdf/Richnij-zvit-shhodo-rozglyadu-zvernen 2023.pdf'
+    },
+    {
+      id: 70,
+      category: 'reports',
+      name: 'Звіт щодо розгляду звернень, скарг, претензій за 2024 рік',
+      description: 'Підсумкові звіти про розгляд звернень та скарг споживачів компанії',
+      size: '63.8 KB',
       date: '31.12.2024',
       type: 'Звіт',
       format: 'PDF',
@@ -725,7 +797,7 @@ export function DocumentsPage() {
       downloadLink: '/pdf/Richnij-zvit-shhodo-rozglyadu-zvernen.pdf'
     },
     {
-      id: 65,
+      id: 71,
       category: 'reports',
       name: 'Звіт щодо дотримання загальних та гарантованих стандартів якості надання послуг електропостачальника та сум наданих компенсацій за недотримання гарантованих стандартів якості надання послуг за 2018 рік',
       description: 'Детальний звіт про якість послуг електропостачання та компенсації споживачам за 2018 рік',
@@ -737,7 +809,7 @@ export function DocumentsPage() {
       downloadLink: '/pdf/Dodatok-8_2018_EZ.pdf'
     },
     {
-      id: 66,
+      id: 72,
       category: 'reports',
       name: 'Звіт щодо дотримання загальних та гарантованих стандартів якості надання послуг електропостачальника та сум наданих компенсацій за недотримання гарантованих стандартів якості надання послуг за 2019 рік',
       description: 'Детальний звіт про якість послуг електропостачання та компенсації споживачам за 2019 рік',
@@ -749,7 +821,7 @@ export function DocumentsPage() {
       downloadLink: '/pdf/Dodatok-8_2019_EZ.pdf'
     },
     {
-      id: 67,
+      id: 73,
       category: 'reports',
       name: 'Звіт щодо дотримання загальних та гарантованих стандартів якості надання послуг електропостачальника та сум наданих компенсацій за недотримання гарантованих стандартів якості надання послуг за 2020 рік',
       description: 'Детальний звіт про якість послуг електропостачання та компенсації споживачам за 2020 рік',
@@ -761,7 +833,7 @@ export function DocumentsPage() {
       downloadLink: '/pdf/Dodatok-8_2020_EZ.pdf'
     },
     {
-      id: 68,
+      id: 74,
       category: 'reports',
       name: 'Звіт щодо дотримання загальних та гарантованих стандартів якості надання послуг електропостачальника та сум наданих компенсацій за недотримання гарантованих стандартів якості надання послуг за 2021 рік',
       description: 'Детальний звіт про якість послуг електропостачання та компенсації споживачам за 2021 рік',
@@ -773,7 +845,7 @@ export function DocumentsPage() {
       downloadLink: '/pdf/Dodatok-8_2021_EZ.pdf'
     },
     {
-      id: 69,
+      id: 75,
       category: 'reports',
       name: 'Звіт щодо дотримання загальних та гарантованих стандартів якості надання послуг електропостачальника та сум наданих компенсацій за недотримання гарантованих стандартів якості надання послуг за 2022 рік',
       description: 'Детальний звіт про якість послуг електропостачання та компенсації споживачам за 2022 рік',
@@ -785,7 +857,7 @@ export function DocumentsPage() {
       downloadLink: '/pdf/Dodatok-8_2022_EZ.pdf'
     },
     {
-      id: 70,
+      id: 76,
       category: 'reports',
       name: 'Звіт щодо дотримання загальних та гарантованих стандартів якості надання послуг електропостачальника та сум наданих компенсацій за недотримання гарантованих стандартів якості надання послуг за 2023 рік',
       description: 'Детальний звіт про якість послуг електропостачання та компенсації споживачам за 2023 рік',
@@ -797,7 +869,7 @@ export function DocumentsPage() {
       downloadLink: '/pdf/Dodatok-8_2023_EZ.pdf'
     },
     {
-      id: 71,
+      id: 77,
       category: 'reports',
       name: 'Звіт щодо дотримання загальних та гарантованих стандартів якості надання послуг електропостачальника та сум наданих компенсацій за недотримання гарантованих стандартів якості надання послуг за 2024 рік',
       description: 'Детальний звіт про якість послуг електропостачання та компенсації споживачам за 2024 рік',
@@ -809,7 +881,7 @@ export function DocumentsPage() {
       downloadLink: '/pdf/Dodatok-8_2024_EZ.pdf'
     },
     {
-      id: 72,
+      id: 78,
       category: 'reports',
       name: 'Річна звітність 2018',
       description: 'Консолідована річна фінансова та операційна звітність компанії за 2018 рік',
@@ -821,7 +893,7 @@ export function DocumentsPage() {
       downloadLink: '/pdf/FinZvit-EZ-2019-01-01.pdf'
     },
     {
-      id: 73,
+      id: 79,
       category: 'reports',
       name: 'Річна звітність 2019',
       description: 'Консолідована річна фінансова та операційна звітність компанії за 2019 рік',
@@ -833,7 +905,7 @@ export function DocumentsPage() {
       downloadLink: '/pdf/FinZvit-EZ-2020-01-01.pdf'
     },
     {
-      id: 74,
+      id: 80,
       category: 'reports',
       name: 'Річна звітність 2020',
       description: 'Консолідована річна фінансова та операційна звітність компанії за 2020 рік',
@@ -845,7 +917,7 @@ export function DocumentsPage() {
       downloadLink: '/pdf/FinZvit-EZ-2021-01-01.pdf'
     },
     {
-      id: 75,
+      id: 81,
       category: 'reports',
       name: 'Річна звітність 2021',
       description: 'Консолідована річна фінансова та операційна звітність компанії за 2021 рік',
@@ -857,7 +929,7 @@ export function DocumentsPage() {
       downloadLink: '/pdf/FinZvit-EZ-2022-01-01.pdf'
     },
     {
-      id: 76,
+      id: 82,
       category: 'reports',
       name: 'Річна звітність 2022',
       description: 'Консолідована річна фінансова та операційна звітність компанії за 2022 рік',
@@ -869,7 +941,7 @@ export function DocumentsPage() {
       downloadLink: '/pdf/FinZvit-EZ-2023-01-01.pdf'
     },
     {
-      id: 77,
+      id: 83,
       category: 'reports',
       name: 'Річна звітність 2023',
       description: 'Консолідована річна фінансова та операційна звітність компанії за 2023 рік',
@@ -881,7 +953,7 @@ export function DocumentsPage() {
       downloadLink: '/pdf/FinZvit-EZ-2024-01-01.pdf'
     },
     {
-      id: 78,
+      id: 84,
       category: 'reports',
       name: 'Річна звітність 2024',
       description: 'Консолідована річна фінансова та операційна звітність компанії за 2024 рік',
@@ -893,7 +965,7 @@ export function DocumentsPage() {
       downloadLink: '/pdf/FinZvit-EZ-2025-01-01.pdf'
     },
     {
-      id: 79,
+      id: 85,
       category: 'reports',
       name: 'Звіт незалежного аудитора',
       description: 'Аудиторський висновок незалежної аудиторської компанії щодо фінансової звітності',
@@ -905,7 +977,19 @@ export function DocumentsPage() {
       downloadLink: '/pdf/2024_Звіт аудитора Енергозахід full.pdf'
     },
     {
-      id: 80,
+      id: 86,
+      category: 'reports',
+      name: 'Звітність про звернення та скарги споживачів електропостачальника 2018 рік',
+      description: 'Статистика та аналіз звернень і скарг споживачів за 2018 рік',
+      size: '2.8 MB',
+      date: '31.12.2018',
+      type: 'Звіт',
+      format: 'PDF',
+      viewLink: '/pdf/32110446_11S_18.pdf',
+      downloadLink: '/pdf/32110446_11S_18.pdf'
+    },
+    {
+      id: 87,
       category: 'reports',
       name: 'Звітність про звернення та скарги споживачів електропостачальника 2019 рік',
       description: 'Статистика та аналіз звернень і скарг споживачів за 2019 рік',
@@ -917,7 +1001,7 @@ export function DocumentsPage() {
       downloadLink: '/pdf/32110446_11S_19.pdf'
     },
     {
-      id: 81,
+      id: 88,
       category: 'reports',
       name: 'Звітність про звернення та скарги споживачів електропостачальника 2020 рік',
       description: 'Статистика та аналіз звернень і скарг споживачів за 2020 рік',
@@ -929,7 +1013,7 @@ export function DocumentsPage() {
       downloadLink: '/pdf/32110446_11S_20.pdf'
     },
     {
-      id: 82,
+      id: 89,
       category: 'reports',
       name: 'Звітність про звернення та скарги споживачів електропостачальника 2021 рік',
       description: 'Статистика та аналіз звернень і скарг споживачів за 2021 рік',
@@ -941,7 +1025,7 @@ export function DocumentsPage() {
       downloadLink: '/pdf/32110446_11S_21.pdf'
     },
     {
-      id: 83,
+      id: 90,
       category: 'reports',
       name: 'Звітність про звернення та скарги споживачів електропостачальника 2022 рік',
       description: 'Статистика та аналіз звернень і скарг споживачів за 2022 рік',
@@ -953,7 +1037,7 @@ export function DocumentsPage() {
       downloadLink: '/pdf/32110446_11S_22.pdf'
     },
     {
-      id: 84,
+      id: 91,
       category: 'reports',
       name: 'Звітність про звернення та скарги споживачів електропостачальника 2023 рік',
       description: 'Статистика та аналіз звернень і скарг споживачів за 2023 рік',
@@ -965,7 +1049,7 @@ export function DocumentsPage() {
       downloadLink: '/pdf/32110446_11S_23.pdf'
     },
     {
-      id: 85,
+      id: 92,
       category: 'reports',
       name: 'Звітність про звернення та скарги споживачів електропостачальника 2024 рік',
       description: 'Статистика та аналіз звернень і скарг споживачів за 2024 рік',
@@ -977,7 +1061,43 @@ export function DocumentsPage() {
       downloadLink: '/pdf/32110446_11S_24.pdf'
     },
     {
-      id: 86,
+      id: 93,
+      category: 'reports',
+      name: 'Звіти щодо показників якості послуг з постачання електричної енергії 2018',
+      description: 'Показники якості електропостачання та дотримання стандартів обслуговування за 2018 рік',
+      size: '4.2 MB',
+      date: '31.12.2018',
+      type: 'Звіт',
+      format: 'PDF',
+      viewLink: '/pdf/Zvitnist-2018.pdf',
+      downloadLink: '/pdf/Zvitnist-2018.pdf'
+    },
+    {
+      id: 94,
+      category: 'reports',
+      name: 'Звіти щодо показників якості послуг з постачання електричної енергії 2019',
+      description: 'Показники якості електропостачання та дотримання стандартів обслуговування за 2019 рік',
+      size: '4.2 MB',
+      date: '31.12.2019',
+      type: 'Звіт',
+      format: 'PDF',
+      viewLink: '/pdf/Zvitnist-2019.pdf',
+      downloadLink: '/pdf/Zvitnist-2019.pdf'
+    },
+    {
+      id: 95,
+      category: 'reports',
+      name: 'Звіти щодо показників якості послуг з постачання електричної енергії 2020',
+      description: 'Показники якості електропостачання та дотримання стандартів обслуговування за 2020 рік',
+      size: '4.2 MB',
+      date: '31.12.2020',
+      type: 'Звіт',
+      format: 'PDF',
+      viewLink: '/pdf/Zvitnist-2020.pdf',
+      downloadLink: '/pdf/Zvitnist-2020.pdf'
+    },
+    {
+      id: 96,
       category: 'reports',
       name: 'Звіти щодо показників якості послуг з постачання електричної енергії 2021',
       description: 'Показники якості електропостачання та дотримання стандартів обслуговування за 2021 рік',
@@ -989,7 +1109,7 @@ export function DocumentsPage() {
       downloadLink: '/pdf/Zvitnist-2021.pdf'
     },
     {
-      id: 87,
+      id: 97,
       category: 'reports',
       name: 'Звіти щодо показників якості послуг з постачання електричної енергії 2022',
       description: 'Показники якості електропостачання та дотримання стандартів обслуговування за 2022 рік',
@@ -1001,7 +1121,7 @@ export function DocumentsPage() {
       downloadLink: '/pdf/Zvitnist-2022.pdf'
     },
     {
-      id: 88,
+      id: 98,
       category: 'reports',
       name: 'Звіти щодо показників якості послуг з постачання електричної енергії 2023',
       description: 'Показники якості електропостачання та дотримання стандартів обслуговування за 2023 рік',
@@ -1013,7 +1133,7 @@ export function DocumentsPage() {
       downloadLink: '/pdf/Zvitnist-2023.pdf'
     },
     {
-      id: 89,
+      id: 99,
       category: 'reports',
       name: 'Звіти щодо показників якості послуг з постачання електричної енергії 2024',
       description: 'Показники якості електропостачання та дотримання стандартів обслуговування за 2024 рік',
@@ -1023,16 +1143,6 @@ export function DocumentsPage() {
       format: 'PDF',
       viewLink: '/pdf/Zvitnist-2024.pdf',
       downloadLink: '/pdf/Zvitnist-2024.pdf'
-    },
-    {
-      id: 90,
-      category: 'tariffs',
-      name: 'Порівняння цін/тарифів на товари, послуги в різних регіонах України, а також в Україні та інших державах.',
-      description: 'Порівняльний аналіз цін та тарифів на електроенергію в різних регіонах України та додаткова інформація щодо тарифів в європейських країнах',
-      date: '01.01.2025',
-      type: 'Аналітичний звіт',
-      viewLink: '/pdf/Порівняння_цін_на_електричну_енергію_в_Україні_та_інших_країнах.pdf',
-      downloadLink: '/pdf/Порівняння_цін_на_електричну_енергію_в_Україні_та_інших_країнах.pdf'
     }
   ];
 

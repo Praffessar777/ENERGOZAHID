@@ -100,9 +100,9 @@ export const documentsPreview = [
     size: '1.2 MB',
     fileName: '/pdf/Tarifi_na_poslugi_z_rozpodilu_elektrichnoi_energii_shho_dijut_z_01 (1).pdf'
   },
-  { name: 'Договір електропостачання (зразок)', 
-    size: '856 KB', 
-    fileName: '/pdf/Договір на постачання електричної енергії.pdf' 
+  { name: 'Інформація про адреси вебсайтів у мережі Інтернет операторів системи, до мереж яких постачальник має доступ', 
+    size: '609 KB', 
+    fileName: '/pdf/REIeSTR-OSR.pdf' 
   }
 ];
 
