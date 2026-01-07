@@ -15,7 +15,8 @@ export default function App() {
   const [currentPage, setCurrentPage] = useState("home");
 
   useEffect(() => {
-    document.title = 'ТОВ "ЕНЕРГОЗАХІД"';
+    document.title =
+  'ТОВ «ЕНЕРГОЗАХІД» — енергопостачальна компанія | Офіційний сайт';
   }, []);
 
   const renderPage = () => {
